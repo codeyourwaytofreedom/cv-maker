@@ -7,17 +7,18 @@
     }
     &_content{
         @include flex-center;
-        border: 2px solid red;
+        //border: 2px solid red;
         height: 600px;
         &_tools{
             width: 200px;
             height: 100%;
             padding-top: 30px;
-            border: 2px solid green;
+            //border: 2px solid green;
+            user-select: none;
             &_joystick{
                 display: grid;
                 row-gap: 10px;
-                border:3px solid crimson;
+                //border:3px solid crimson;
                 #up, #down{
                     @include grid-center;
                 }
@@ -32,6 +33,7 @@
                 column-gap: 10px;
                 top:105px;
                 padding-bottom: 5px;
+                padding-left: 10px;
                 button{
                     border: none;
                     border-bottom: 1px solid black;
@@ -39,6 +41,7 @@
                     cursor: pointer;
                     background-color: black;
                     color: yellow;
+                    user-select: none;
                     span{
                         color:yellow;
                     }
@@ -59,7 +62,7 @@
                 display: grid;
                 justify-self: center;
                 overflow: hidden;
-                box-shadow: 0px 1px 5px 4px gray;
+                box-shadow: 0px 1px 3px 4px gray;
                 border-radius: 20px;
                 img{
                     object-fit: contain;
@@ -73,7 +76,7 @@
                 top:30px;
                 .double{
                     display: flex;
-                    align-items: flex-end;
+                    align-items: center;
                     column-gap: 10px;
                 }
                 input{
@@ -90,6 +93,7 @@
             width: 600px;
             border: 2px solid salmon;
             height: 100%;
+            padding: 30px;
         }
     }
 }

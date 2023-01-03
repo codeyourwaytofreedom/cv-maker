@@ -6,19 +6,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid red;
   height: 600px;
 }
 .cv_content_tools {
   width: 200px;
   height: 100%;
   padding-top: 30px;
-  border: 2px solid green;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .cv_content_tools_joystick {
   display: grid;
   row-gap: 10px;
-  border: 3px solid crimson;
 }
 .cv_content_tools_joystick #up, .cv_content_tools_joystick #down {
   display: grid;
@@ -39,6 +40,7 @@
        column-gap: 10px;
   top: 105px;
   padding-bottom: 5px;
+  padding-left: 10px;
 }
 .cv_content_tools_pen button, .cv_content_tools_pencil button {
   border: none;
@@ -47,6 +49,10 @@
   cursor: pointer;
   background-color: black;
   color: yellow;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .cv_content_tools_pen button span, .cv_content_tools_pencil button span {
   color: yellow;
@@ -66,7 +72,7 @@
   display: grid;
   justify-self: center;
   overflow: hidden;
-  box-shadow: 0px 1px 5px 4px gray;
+  box-shadow: 0px 1px 3px 4px gray;
   border-radius: 20px;
 }
 .cv_content_profile_picture img {
@@ -82,7 +88,7 @@
 }
 .cv_content_profile_summary .double {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   -moz-column-gap: 10px;
        column-gap: 10px;
 }
@@ -98,4 +104,5 @@
   width: 600px;
   border: 2px solid salmon;
   height: 100%;
+  padding: 30px;
 }/*# sourceMappingURL=cv.module.css.map */
