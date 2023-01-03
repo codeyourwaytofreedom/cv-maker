@@ -9,11 +9,27 @@
         @include flex-center;
         border: 2px solid red;
         height: 600px;
+        &_tools{
+            border:3px solid green;
+            width: 200px;
+            height: 100%;
+            &_joystick{
+                display: grid;
+                row-gap: 10px;
+                border:3px solid crimson;
+                #up, #down{
+                    @include grid-center;
+                }
+                #m{
+                    @include flex-center;
+                    column-gap: 5px;
+                }
+            }
+        }
         &_profile{
-            width: 350px;
             height: 100%;
             border: 2px solid black;
-            display: grid;
+            padding: 30px;
             &_picture{
                 width: 200px;
                 height: 200px;
@@ -21,6 +37,11 @@
                 position: relative;
                 display: grid;
                 justify-self: center;
+                overflow: hidden;
+                img{
+                    object-fit: contain;
+                    position: relative;
+                }
             }
         }
         &_details{
