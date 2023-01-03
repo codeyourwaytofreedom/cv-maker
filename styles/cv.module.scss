@@ -10,9 +10,10 @@
         border: 2px solid red;
         height: 600px;
         &_tools{
-            border:3px solid green;
             width: 200px;
             height: 100%;
+            padding-top: 30px;
+            border: 2px solid green;
             &_joystick{
                 display: grid;
                 row-gap: 10px;
@@ -25,6 +26,10 @@
                     column-gap: 5px;
                 }
             }
+            &_pen{
+                position: relative;
+                top:110px;
+            }
         }
         &_profile{
             height: 100%;
@@ -33,14 +38,34 @@
             &_picture{
                 width: 200px;
                 height: 200px;
-                border: 2px solid green;
                 position: relative;
                 display: grid;
                 justify-self: center;
                 overflow: hidden;
+                box-shadow: 0px 1px 5px 4px gray;
+                border-radius: 20px;
                 img{
                     object-fit: contain;
                     position: relative;
+                }
+            }
+            &_summary{
+                display: grid;
+                row-gap: 3px;
+                position: relative;
+                top:30px;
+                .double{
+                    display: flex;
+                    align-items: flex-end;
+                    column-gap: 10px;
+                }
+                input{
+                    border: none;
+                    font-size: 16px;
+                    font-weight: 300;
+                    &:focus{
+                        outline: none;
+                    }
                 }
             }
         }

@@ -3,7 +3,7 @@ import pp from "./me.jpg";
 import Image from 'next/image';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronCircleUp, faChevronCircleDown, faChevronCircleLeft, faChevronCircleRight, faPlusCircle, faMinusCircle } from '@fortawesome/free-solid-svg-icons';
+import { faChevronCircleUp, faChevronCircleDown, faChevronCircleLeft, faChevronCircleRight, faPlusCircle, faMinusCircle, faLocation, faPhone, faLocationPinLock, faLocationPin, faMapLocation, faLocationCrosshairs, faMapLocationDot, faMailForward, faMailBulk } from '@fortawesome/free-solid-svg-icons';
 
 const CV = () => {
     let name = "John";
@@ -28,10 +28,38 @@ const CV = () => {
                         </div>
                         <div id={x.down}><FontAwesomeIcon icon={faChevronCircleDown} size={"2x"}/></div>
                     </div>
+                    <div className={x.cv_content_tools_pen}>
+                        <button>
+                            <span>16px</span>
+                        </button>
+                        <button>
+                            <span>18px</span>
+                        </button>
+                        <button>
+                            <span>Light</span>
+                        </button>
+                        <button>
+                            <span>Bold</span>
+                        </button>
+                    </div>
+                    <div className={x.cv_content_tools_pen}>
+                        <button>
+                            <span>16px</span>
+                        </button>
+                        <button>
+                            <span>18px</span>
+                        </button>
+                        <button>
+                            <span>Light</span>
+                        </button>
+                        <button>
+                            <span>Bold</span>
+                        </button>
+                    </div>
                     
                 </div>
                 
-                <div className={x.cv_content_profile}>
+                <div className={x.cv_content_profile} >
                     <div className={x.cv_content_profile_picture}>
                         <Image
                             //fill={true}
@@ -39,6 +67,26 @@ const CV = () => {
                             alt="Profile Picture"
                             style={{width:"100%", height:"100%", left:"0", top:"-40px"}}
                         />
+                    </div>
+                    <div className={x.cv_content_profile_summary}>
+                        <input type="text" placeholder="Full name" />
+                        <input type="text" placeholder="Profession" />
+                        <br />
+                        <span className={x.double}>
+                            <FontAwesomeIcon icon={faMapLocationDot}/>
+                            <input type="text" placeholder="Location" />
+                        </span>
+                        <span className={x.double}>
+                            <FontAwesomeIcon icon={faPhone}/>
+                            <input type="text" placeholder="Phone" />
+                        </span>
+                        <span className={x.double}>
+                            <FontAwesomeIcon icon={faMailBulk}/>
+                            <input type="text" placeholder="Email" />
+                        </span>
+                        
+                        
+                        
                     </div>
                 </div>
 
