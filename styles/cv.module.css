@@ -32,8 +32,26 @@
   -moz-column-gap: 5px;
        column-gap: 5px;
 }
-.cv_content_tools_pen {
+.cv_content_tools_pen, .cv_content_tools_pencil {
   position: relative;
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  top: 105px;
+  padding-bottom: 5px;
+}
+.cv_content_tools_pen button, .cv_content_tools_pencil button {
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 2px;
+  cursor: pointer;
+  background-color: black;
+  color: yellow;
+}
+.cv_content_tools_pen button span, .cv_content_tools_pencil button span {
+  color: yellow;
+}
+.cv_content_tools_pencil {
   top: 110px;
 }
 .cv_content_profile {
@@ -58,7 +76,7 @@
 }
 .cv_content_profile_summary {
   display: grid;
-  row-gap: 3px;
+  row-gap: 5px;
   position: relative;
   top: 30px;
 }

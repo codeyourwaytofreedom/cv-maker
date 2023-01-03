@@ -26,8 +26,25 @@
                     column-gap: 5px;
                 }
             }
-            &_pen{
+            &_pen, &_pencil{
                 position: relative;
+                display: flex;
+                column-gap: 10px;
+                top:105px;
+                padding-bottom: 5px;
+                button{
+                    border: none;
+                    border-bottom: 1px solid black;
+                    padding: 2px;
+                    cursor: pointer;
+                    background-color: black;
+                    color: yellow;
+                    span{
+                        color:yellow;
+                    }
+                }
+            }
+            &_pencil{
                 top:110px;
             }
         }
@@ -51,7 +68,7 @@
             }
             &_summary{
                 display: grid;
-                row-gap: 3px;
+                row-gap: 5px;
                 position: relative;
                 top:30px;
                 .double{

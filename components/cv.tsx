@@ -4,12 +4,14 @@ import Image from 'next/image';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleUp, faChevronCircleDown, faChevronCircleLeft, faChevronCircleRight, faPlusCircle, faMinusCircle, faLocation, faPhone, faLocationPinLock, faLocationPin, faMapLocation, faLocationCrosshairs, faMapLocationDot, faMailForward, faMailBulk } from '@fortawesome/free-solid-svg-icons';
+import { useState } from "react";
 
 const CV = () => {
-    let name = "John";
-    const test = (t: number) => {
-        console.log(t)
-    }
+
+
+    const [name, setName] = useState(["16px", 300]);
+    const [profession, setProfession] = useState(["16px", 300]);
+
     return ( 
         <div className={x.cv}>
             <div className={x.cv_config}>
@@ -29,6 +31,38 @@ const CV = () => {
                         <div id={x.down}><FontAwesomeIcon icon={faChevronCircleDown} size={"2x"}/></div>
                     </div>
                     <div className={x.cv_content_tools_pen}>
+                        <button onClick={()=> setName(["16px", name[1]])}>
+                            16px
+                        </button>
+                        <button onClick={()=> setName(["18px", name[1]])}>
+                            <span>18px</span>
+                        </button>
+                        <button onClick={()=> setName(["20px", name[1]])}>
+                            <span>20px</span>
+                        </button>
+                        <button onClick={()=> setName([name[0], 300])}>
+                            <span>Light</span>
+                        </button>
+                        <button onClick={()=> setName([name[0], 400])}>
+                            <span>Bold</span>
+                        </button>
+                    </div>
+                    <div className={x.cv_content_tools_pen}>
+                        <button onClick={()=> setProfession(["16px", profession[1]])}>
+                            <span>16px</span>
+                        </button>
+                        <button onClick={()=> setProfession(["18px", profession[1]])}>
+                            <span>18px</span>
+                        </button>
+                        <button onClick={()=> setProfession([profession[0], 300])}>
+                            <span>Light</span>
+                        </button>
+                        <button onClick={()=> setProfession([profession[0], 400])}>
+                            <span>Bold</span>
+                        </button>
+                    </div>
+                    <br />
+                    <div className={x.cv_content_tools_pencil}>
                         <button>
                             <span>16px</span>
                         </button>
@@ -42,7 +76,21 @@ const CV = () => {
                             <span>Bold</span>
                         </button>
                     </div>
-                    <div className={x.cv_content_tools_pen}>
+                    <div className={x.cv_content_tools_pencil}>
+                        <button>
+                            <span>16px</span>
+                        </button>
+                        <button>
+                            <span>18px</span>
+                        </button>
+                        <button>
+                            <span>Light</span>
+                        </button>
+                        <button>
+                            <span>Bold</span>
+                        </button>
+                    </div>
+                    <div className={x.cv_content_tools_pencil}>
                         <button>
                             <span>16px</span>
                         </button>
@@ -69,8 +117,8 @@ const CV = () => {
                         />
                     </div>
                     <div className={x.cv_content_profile_summary}>
-                        <input type="text" placeholder="Full name" />
-                        <input type="text" placeholder="Profession" />
+                        <input type="text" placeholder="Full name" style={{fontSize: name[0], fontWeight: name[1]}}/>
+                        <input type="text" placeholder="Profession" style={{fontSize: profession[0], fontWeight: profession[1]}}/>
                         <br />
                         <span className={x.double}>
                             <FontAwesomeIcon icon={faMapLocationDot}/>
