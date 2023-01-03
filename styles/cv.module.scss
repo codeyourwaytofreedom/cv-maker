@@ -94,6 +94,12 @@
             border: 2px solid salmon;
             height: 100%;
             padding: 30px;
+            textarea {
+                resize: none;
+                width: 100% !important;
+                border: none;
+                overflow: hidden;
+              }
         }
     }
 }

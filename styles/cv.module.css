@@ -105,4 +105,10 @@
   border: 2px solid salmon;
   height: 100%;
   padding: 30px;
+}
+.cv_content_details textarea {
+  resize: none;
+  width: 100% !important;
+  border: none;
+  overflow: hidden;
 }/*# sourceMappingURL=cv.module.css.map */

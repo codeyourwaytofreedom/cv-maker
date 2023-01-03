@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleUp, faChevronCircleDown, faChevronCircleLeft, faChevronCircleRight, faPlusCircle, faMinusCircle, faLocation, faPhone, faLocationPinLock, faLocationPin, faMapLocation, faLocationCrosshairs, faMapLocationDot, faMailForward, faMailBulk } from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
+import Details from "./details";
 
 const CV = () => {
 
@@ -140,11 +141,9 @@ const CV = () => {
                         
                     </div>
                 </div>
-
-                <div className={x.cv_content_details}>
-                    Details
-                </div>
+                <Details/>
             </div>
+            
         </div>
      );
 }
