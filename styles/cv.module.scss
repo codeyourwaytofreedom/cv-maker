@@ -1,3 +1,32 @@
+@import "./base";
 .cv{
-    background-color: red;
+    
+    &_config{
+        border: 2px solid black;
+        height: 100px;
+    }
+    &_content{
+        @include flex-center;
+        border: 2px solid red;
+        height: 600px;
+        &_profile{
+            width: 350px;
+            height: 100%;
+            border: 2px solid black;
+            display: grid;
+            &_picture{
+                width: 200px;
+                height: 200px;
+                border: 2px solid green;
+                position: relative;
+                display: grid;
+                justify-self: center;
+            }
+        }
+        &_details{
+            width: 600px;
+            border: 2px solid salmon;
+            height: 100%;
+        }
+    }
 }

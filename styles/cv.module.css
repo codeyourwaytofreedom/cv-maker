@@ -1,3 +1,30 @@
-.cv {
-  background-color: red;
+.cv_config {
+  border: 2px solid black;
+  height: 100px;
+}
+.cv_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid red;
+  height: 600px;
+}
+.cv_content_profile {
+  width: 350px;
+  height: 100%;
+  border: 2px solid black;
+  display: grid;
+}
+.cv_content_profile_picture {
+  width: 200px;
+  height: 200px;
+  border: 2px solid green;
+  position: relative;
+  display: grid;
+  justify-self: center;
+}
+.cv_content_details {
+  width: 600px;
+  border: 2px solid salmon;
+  height: 100%;
 }/*# sourceMappingURL=cv.module.css.map */

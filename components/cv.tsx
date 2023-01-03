@@ -1,4 +1,6 @@
-import h from "../styles/cv.module.css";
+import x from "../styles/cv.module.css";
+import pp from "./pp.png";
+import Image from 'next/image';
 
 const CV = () => {
     let name = "John";
@@ -6,12 +8,23 @@ const CV = () => {
         console.log(t)
     }
     return ( 
-        <div className={h.cv}>
-            <div className="cv_config">
+        <div className={x.cv}>
+            <div className={x.cv_config}>
                 Configuration options go here...
             </div>
-            <div className="cv_content">
-                Content goes here...
+            <div className={x.cv_content}>
+                <div className={x.cv_content_profile}>
+                    <div className={x.cv_content_profile_picture}>
+                        <Image
+                            fill={true}
+                            src={pp}
+                            alt="Profile Picture"
+                        />
+                    </div>
+                </div>
+                <div className={x.cv_content_details}>
+                    Details
+                </div>
             </div>
         </div>
      );
