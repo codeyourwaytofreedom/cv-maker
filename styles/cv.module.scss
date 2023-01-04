@@ -83,7 +83,7 @@
             padding: 30px;
             &_tools{
                 position: absolute;
-                border:2px solid red;
+                //border:2px solid red;
                 right: -320px;
                 top:0;
                 width: 300px;
@@ -93,13 +93,13 @@
                     display: flex;
                     column-gap: 10px;
                     @include pen_button;
+                    padding: 5px;
                 }
 
             }
             textarea {
                 resize: none;
                 width: 100% !important;
-                border: none;
                 overflow: hidden;
                 position: relative;
                 top:5px;
