@@ -5,52 +5,46 @@
         border: 2px solid black;
         height: 100px;
     }
+
+    &_tools{
+        width: 200px;
+        height: 100%;
+        padding-top: 30px;
+        //border: 2px solid green;
+        position: absolute;
+        user-select: none;
+        &_joystick{
+            display: grid;
+            row-gap: 10px;
+            //border:3px solid crimson;
+            #up, #down{
+                @include grid-center;
+            }
+            #m{
+                @include flex-center;
+                column-gap: 5px;
+            }
+        }
+        &_pen, &_pencil{
+            position: relative;
+            display: flex;
+            column-gap: 10px;
+            top:115px;
+            padding-bottom: 5px;
+            padding-left: 10px;
+            @include pen_button;
+        }
+        &_pencil{
+            top:110px;
+        }
+    }
     &_content{
         @include flex-center;
         //border: 2px solid red;
         height: 600px;
-        &_tools{
-            width: 200px;
-            height: 100%;
-            padding-top: 30px;
-            //border: 2px solid green;
-            user-select: none;
-            &_joystick{
-                display: grid;
-                row-gap: 10px;
-                //border:3px solid crimson;
-                #up, #down{
-                    @include grid-center;
-                }
-                #m{
-                    @include flex-center;
-                    column-gap: 5px;
-                }
-            }
-            &_pen, &_pencil{
-                position: relative;
-                display: flex;
-                column-gap: 10px;
-                top:105px;
-                padding-bottom: 5px;
-                padding-left: 10px;
-                button{
-                    border: none;
-                    border-bottom: 1px solid black;
-                    padding: 2px;
-                    cursor: pointer;
-                    background-color: black;
-                    color: yellow;
-                    user-select: none;
-                    span{
-                        color:yellow;
-                    }
-                }
-            }
-            &_pencil{
-                top:110px;
-            }
-        }
+        width: 800px;
+        position: relative;
+        left: 230px;
         &_profile{
             height: 100%;
             border: 2px solid black;
@@ -79,14 +73,7 @@
                     align-items: center;
                     column-gap: 10px;
                 }
-                input{
-                    border: none;
-                    font-size: 16px;
-                    font-weight: 300;
-                    &:focus{
-                        outline: none;
-                    }
-                }
+                @include input-styles;
             }
         }
         &_details{
@@ -94,12 +81,39 @@
             border: 2px solid salmon;
             height: 100%;
             padding: 30px;
+            &_tools{
+                position: absolute;
+                border:2px solid red;
+                right: -320px;
+                top:0;
+                width: 300px;
+                height: 600px;
+                padding-top: 30px;
+                &_pen{
+                    display: flex;
+                    column-gap: 10px;
+                    @include pen_button;
+                }
+
+            }
             textarea {
                 resize: none;
                 width: 100% !important;
                 border: none;
                 overflow: hidden;
+                position: relative;
+                top:5px;
+                text-align:justify;
               }
+            @include input-styles;
+
+            &_chapter{
+
+            }
+            &_title{
+                @include input-styles;
+            }
+
         }
     }
 }

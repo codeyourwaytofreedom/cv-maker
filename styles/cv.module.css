@@ -2,50 +2,45 @@
   border: 2px solid black;
   height: 100px;
 }
-.cv_content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 600px;
-}
-.cv_content_tools {
+.cv_tools {
   width: 200px;
   height: 100%;
   padding-top: 30px;
+  position: absolute;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
 }
-.cv_content_tools_joystick {
+.cv_tools_joystick {
   display: grid;
   row-gap: 10px;
 }
-.cv_content_tools_joystick #up, .cv_content_tools_joystick #down {
+.cv_tools_joystick #up, .cv_tools_joystick #down {
   display: grid;
   justify-content: center;
   align-items: center;
 }
-.cv_content_tools_joystick #m {
+.cv_tools_joystick #m {
   display: flex;
   justify-content: center;
   align-items: center;
   -moz-column-gap: 5px;
        column-gap: 5px;
 }
-.cv_content_tools_pen, .cv_content_tools_pencil {
+.cv_tools_pen, .cv_tools_pencil {
   position: relative;
   display: flex;
   -moz-column-gap: 10px;
        column-gap: 10px;
-  top: 105px;
+  top: 115px;
   padding-bottom: 5px;
   padding-left: 10px;
 }
-.cv_content_tools_pen button, .cv_content_tools_pencil button {
+.cv_tools_pen button, .cv_tools_pencil button {
   border: none;
   border-bottom: 1px solid black;
-  padding: 2px;
+  padding: 4px;
   cursor: pointer;
   background-color: black;
   color: yellow;
@@ -54,11 +49,20 @@
       -ms-user-select: none;
           user-select: none;
 }
-.cv_content_tools_pen button span, .cv_content_tools_pencil button span {
+.cv_tools_pen button span, .cv_tools_pencil button span {
   color: yellow;
 }
-.cv_content_tools_pencil {
+.cv_tools_pencil {
   top: 110px;
+}
+.cv_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  width: 800px;
+  position: relative;
+  left: 230px;
 }
 .cv_content_profile {
   height: 100%;
@@ -106,9 +110,57 @@
   height: 100%;
   padding: 30px;
 }
+.cv_content_details_tools {
+  position: absolute;
+  border: 2px solid red;
+  right: -320px;
+  top: 0;
+  width: 300px;
+  height: 600px;
+  padding-top: 30px;
+}
+.cv_content_details_tools_pen {
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.cv_content_details_tools_pen button {
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 4px;
+  cursor: pointer;
+  background-color: black;
+  color: yellow;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.cv_content_details_tools_pen button span {
+  color: yellow;
+}
 .cv_content_details textarea {
   resize: none;
   width: 100% !important;
   border: none;
   overflow: hidden;
+  position: relative;
+  top: 5px;
+  text-align: justify;
+}
+.cv_content_details input {
+  border: none;
+  font-size: 16px;
+  font-weight: 300;
+}
+.cv_content_details input:focus {
+  outline: none;
+}
+.cv_content_details_title input {
+  border: none;
+  font-size: 16px;
+  font-weight: 300;
+}
+.cv_content_details_title input:focus {
+  outline: none;
 }/*# sourceMappingURL=cv.module.css.map */

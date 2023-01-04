@@ -10,3 +10,28 @@
     align-items: center;
 }
 
+@mixin input-styles {
+    input{
+        border: none;
+        font-size: 16px;
+        font-weight: 300;
+        &:focus{
+            outline: none;
+        }
+    }
+}
+
+@mixin pen_button {
+    button{
+        border: none;
+        border-bottom: 1px solid black;
+        padding: 4px;
+        cursor: pointer;
+        background-color: black;
+        color: yellow;
+        user-select: none;
+        span{
+            color:yellow;
+        }
+    }
+}
