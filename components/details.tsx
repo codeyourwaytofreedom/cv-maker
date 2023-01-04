@@ -8,7 +8,7 @@ const Details = () => {
                     Personal Statement
                 </div>
                 <div className={x.cv_content_details_chapter_content}>
-                    <textarea name="eeee" cols={10} maxLength={20} style={{height:"200px"}}></textarea>
+                    <textarea name="eeee" spellCheck={false} style={{height:"200px"}}></textarea>
                 </div>
             </div>
         </div>
