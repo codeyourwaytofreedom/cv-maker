@@ -111,7 +111,7 @@ const CV = () => {
                     
                 </div>
                 
-                <div className={x.cv_content_profile} >
+                <div className={x.cv_content_profile}>
                     <div className={x.cv_content_profile_picture}>
                         <Image
                             //fill={true}
