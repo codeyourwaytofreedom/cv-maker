@@ -56,7 +56,6 @@
                 display: grid;
                 justify-self: center;
                 overflow: hidden;
-                box-shadow: 0px 1px 3px 4px gray;
                 border-radius: 20px;
                 img{
                     object-fit: contain;
@@ -81,6 +80,9 @@
             border: 2px solid salmon;
             height: 100%;
             padding: 30px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
             &_tools{
                 position: absolute;
                 //border:2px solid red;
@@ -97,23 +99,36 @@
                 }
 
             }
-            textarea {
-                resize: none;
-                width: 100% !important;
-                overflow: hidden;
-                position: relative;
-                top:5px;
-                text-align:justify;
-              }
+
             @include input-styles;
 
             &_chapter{
-
+                position: relative;
+                display: grid;
+                row-gap: 10px;
+                &_content{
+                    text-align: justify;
+                    width: 500px !important;
+                    height: fit-content;
+                    display: flex;
+                    column-gap: 10px;
+                    position: relative;
+                    &_controls{
+                        position: absolute;
+                        right: -320px;
+                        border: 2px solid green;
+                        top:-10px;
+                    }
+                    #education_double{
+                        display: flex;
+                        column-gap: 10px;
+                    }
+                }
             }
-            &_title{
-                @include input-styles;
+            
+            #editable{
+                border: 1px solid silver;
             }
-
         }
     }
 }

@@ -40,7 +40,7 @@
 .cv_tools_pen button, .cv_tools_pencil button {
   border: none;
   border-bottom: 1px solid black;
-  padding: 4px;
+  padding: 0 4px;
   cursor: pointer;
   background-color: black;
   color: yellow;
@@ -76,7 +76,6 @@
   display: grid;
   justify-self: center;
   overflow: hidden;
-  box-shadow: 0px 1px 3px 4px gray;
   border-radius: 20px;
 }
 .cv_content_profile_picture img {
@@ -109,6 +108,9 @@
   border: 2px solid salmon;
   height: 100%;
   padding: 30px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
 }
 .cv_content_details_tools {
   position: absolute;
@@ -127,7 +129,7 @@
 .cv_content_details_tools_pen button {
   border: none;
   border-bottom: 1px solid black;
-  padding: 4px;
+  padding: 0 4px;
   cursor: pointer;
   background-color: black;
   color: yellow;
@@ -139,14 +141,6 @@
 .cv_content_details_tools_pen button span {
   color: yellow;
 }
-.cv_content_details textarea {
-  resize: none;
-  width: 100% !important;
-  overflow: hidden;
-  position: relative;
-  top: 5px;
-  text-align: justify;
-}
 .cv_content_details input {
   border: none;
   font-size: 16px;
@@ -155,11 +149,33 @@
 .cv_content_details input:focus {
   outline: none;
 }
-.cv_content_details_title input {
-  border: none;
-  font-size: 16px;
-  font-weight: 300;
+.cv_content_details_chapter {
+  position: relative;
+  display: grid;
+  row-gap: 10px;
 }
-.cv_content_details_title input:focus {
-  outline: none;
+.cv_content_details_chapter_content {
+  text-align: justify;
+  width: 500px !important;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  position: relative;
+}
+.cv_content_details_chapter_content_controls {
+  position: absolute;
+  right: -320px;
+  border: 2px solid green;
+  top: -10px;
+}
+.cv_content_details_chapter_content #education_double {
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.cv_content_details #editable {
+  border: 1px solid silver;
 }/*# sourceMappingURL=cv.module.css.map */
