@@ -2,6 +2,7 @@ import { faChevronCircleUp,faChevronCircleDown } from "@fortawesome/free-solid-s
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRef, useState } from "react";
 import x from "../styles/cv.module.css";
+import Chapter from "./chapter";
 import Pen from "./pen";
 
 
@@ -40,7 +41,6 @@ const Details = () => {
                         <Pen cls={x.cv_content_details_tools_pen} setter={setPersonal_details} value={personal_details} und={false} />
                     </div>
                 </div>
-                
             </div>
 
             <div className={x.cv_content_details_chapter}>
@@ -66,8 +66,12 @@ const Details = () => {
                     </div>
                     <div className={x.cv_content_details_chapter_content_controls}>
                         <Pen cls={x.cv_content_details_tools_pen} setter={seteducationDetails} value={educationDetails} und={false} />
-                        <FontAwesomeIcon icon={faChevronCircleUp} size={"2x"} onClick={()=> setEducationLines(education_lines+1)} />
-                        <FontAwesomeIcon icon={faChevronCircleDown} size={"2x"} onClick={()=> setEducationLines(education_lines-1)}/>
+                        <div id={x.education_extra}>
+                            <FontAwesomeIcon icon={faChevronCircleUp} size={"2x"} 
+                            onClick={()=> education_lines < 5 ? setEducationLines(education_lines+1) : setEducationLines(education_lines)} />
+                            <FontAwesomeIcon icon={faChevronCircleDown} size={"2x"} 
+                            onClick={()=> education_lines > 0 ? setEducationLines(education_lines-1) : setEducationLines(education_lines)} />
+                        </div>
                     </div>
                 </div>
 
@@ -89,7 +93,9 @@ const Details = () => {
                             </div>
                         </div>
                         )
-                }                
+                }     
+                <br />
+                <Chapter/>        
             </div>
         </div>
      );

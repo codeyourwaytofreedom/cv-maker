@@ -175,4 +175,7 @@
   display: flex;
   -moz-column-gap: 10px;
        column-gap: 10px;
+}
+.cv_content_details_chapter_content #education_extra {
+  border: 2px solid green;
 }/*# sourceMappingURL=cv.module.css.map */
