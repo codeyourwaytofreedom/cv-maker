@@ -16,13 +16,13 @@ const Pen = ({cls, setter, value, und}) => {
                     <button onClick={()=> setter([value[0], 400,value[2]])}>
                         <span>Bold</span>
                     </button>
-                    {
-                        und ? 
-                        <button onClick={()=> value[2] === "none" ? setter([value[0], value[1], "underline"]) :setter([value[0], value[1], "none"]) }>
+                    
+                        
+                        <button style={{opacity: und ? "1" : "0"}} onClick={()=> value[2] === "none" ? setter([value[0], value[1], "underline"]) :setter([value[0], value[1], "none"]) }>
                             <span>Underline</span>
                         </button>
-                        : null
-                    }
+                       
+                    
                     
             </div>
      );

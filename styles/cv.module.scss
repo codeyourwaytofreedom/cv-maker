@@ -116,18 +116,14 @@
                     &_controls{
                         position: absolute;
                         right: -320px;
-                        border: 2px solid green;
                         top:-10px;
+                        z-index: 5;
                     }
                     #education_double{
                         display: flex;
                         column-gap: 10px;
                     }
                 }
-            }
-            
-            #editable{
-                border: 1px solid silver;
             }
         }
     }

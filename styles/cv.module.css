@@ -168,14 +168,11 @@
 .cv_content_details_chapter_content_controls {
   position: absolute;
   right: -320px;
-  border: 2px solid green;
   top: -10px;
+  z-index: 5;
 }
 .cv_content_details_chapter_content #education_double {
   display: flex;
   -moz-column-gap: 10px;
        column-gap: 10px;
-}
-.cv_content_details #editable {
-  border: 1px solid silver;
 }/*# sourceMappingURL=cv.module.css.map */
