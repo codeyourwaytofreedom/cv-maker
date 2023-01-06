@@ -56,13 +56,9 @@ const CV = () => {
                         </div>
                         <div id={x.down}><FontAwesomeIcon icon={faChevronCircleDown} size={"2x"} onClick={()=> setPosition([position[0], position[1]+1, position[2]])}/></div>
                     </div>
-
                     <Pen cls={x.cv_tools_pen} setter={setName} value={name}/>
                     <Pen cls={x.cv_tools_pen} setter={setProfession} value={profession}/>
-
-
                     <br />
-
                     <Pen cls={x.cv_tools_pencil} setter={setLocation} value={location}/>
                     <Pen cls={x.cv_tools_pencil} setter={setPhone} value={phone}/>
                     <Pen cls={x.cv_tools_pencil} setter={setEmail} value={email}/> 
@@ -96,6 +92,7 @@ const CV = () => {
                         </span>
                     </div>
                 </div>
+
                 <Details/>
             </div>
             

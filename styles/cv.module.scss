@@ -115,9 +115,15 @@
                     position: relative;
                     &_controls{
                         position: absolute;
-                        right: -320px;
+                        right: -310px;
                         top:-10px;
                         z-index: 5;
+                        //border: 2px solid salmon;
+                        h3{
+                            position: relative;
+                            left: 5px;
+                            text-decoration: underline;
+                        }
                     }
                     #education_double{
                         display: flex;

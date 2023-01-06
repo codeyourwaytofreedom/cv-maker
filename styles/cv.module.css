@@ -167,9 +167,14 @@
 }
 .cv_content_details_chapter_content_controls {
   position: absolute;
-  right: -320px;
+  right: -310px;
   top: -10px;
   z-index: 5;
+}
+.cv_content_details_chapter_content_controls h3 {
+  position: relative;
+  left: 5px;
+  text-decoration: underline;
 }
 .cv_content_details_chapter_content #education_double {
   display: flex;

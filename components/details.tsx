@@ -18,7 +18,7 @@ const Details = () => {
 
     return ( 
         <div className={x.cv_content_details}>
-            <div className={x.cv_content_details_chapter}>
+{/*             <div className={x.cv_content_details_chapter}>
                 <div className={x.cv_content_details_chapter_title}>
                     <input type="text" placeholder="Personal Statement" style={{fontSize: personal[0], fontWeight: personal[1], textDecoration: personal[2]}}/>
                     <div className={x.cv_content_details_chapter_content_controls}>
@@ -41,10 +41,12 @@ const Details = () => {
                         <Pen cls={x.cv_content_details_tools_pen} setter={setPersonal_details} value={personal_details} und={false} />
                     </div>
                 </div>
-            </div>
+            </div> */}
+            <Chapter/>  
 
             <div className={x.cv_content_details_chapter}>
-                <div className={x.cv_content_details_chapter_title}>
+
+{/*                 <div className={x.cv_content_details_chapter_title}>
                     <input type="text" placeholder="Education" style={{fontSize: education[0], fontWeight: education[1], textDecoration: education[2]}}/>
                     <div className={x.cv_content_details_chapter_content_controls}>
                         <Pen cls={x.cv_content_details_tools_pen} setter={setEducation} value={education} und={true} />
@@ -93,7 +95,7 @@ const Details = () => {
                             </div>
                         </div>
                         )
-                }     
+                }    */}  
                 <br />
                 <Chapter/>        
             </div>
