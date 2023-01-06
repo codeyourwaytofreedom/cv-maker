@@ -33,7 +33,6 @@
   display: flex;
   -moz-column-gap: 10px;
        column-gap: 10px;
-  top: 115px;
   padding-bottom: 5px;
   padding-left: 10px;
 }
@@ -102,6 +101,16 @@
 }
 .cv_content_profile_summary input:focus {
   outline: none;
+}
+.cv_content_profile_summary_line {
+  border: 2px solid black;
+  position: relative;
+}
+.cv_content_profile_summary_line_penholder {
+  border: 1px solid red;
+  position: absolute;
+  top: 0;
+  left: -250px;
 }
 .cv_content_details {
   width: 600px;

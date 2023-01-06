@@ -11,6 +11,7 @@ import { useRef } from "react";
 import { jsPDF } from "jspdf";
 import html2canvas from "html2canvas";
 import Pen from "./pen";
+import Summary_line from "./summary_line";
 
 const CV = () => {
     const inputRef = useRef();
@@ -56,12 +57,12 @@ const CV = () => {
                         </div>
                         <div id={x.down}><FontAwesomeIcon icon={faChevronCircleDown} size={"2x"} onClick={()=> setPosition([position[0], position[1]+1, position[2]])}/></div>
                     </div>
-                    <Pen cls={x.cv_tools_pen} setter={setName} value={name}/>
-                    <Pen cls={x.cv_tools_pen} setter={setProfession} value={profession}/>
+                    {/* <Pen cls={x.cv_tools_pen} setter={setName} value={name}/> */}
+{/*                     <Pen cls={x.cv_tools_pen} setter={setProfession} value={profession}/>
                     <br />
                     <Pen cls={x.cv_tools_pencil} setter={setLocation} value={location}/>
                     <Pen cls={x.cv_tools_pencil} setter={setPhone} value={phone}/>
-                    <Pen cls={x.cv_tools_pencil} setter={setEmail} value={email}/> 
+                    <Pen cls={x.cv_tools_pencil} setter={setEmail} value={email}/>  */}
             </div>
 
             <div className={x.cv_content} ref={inputRef}>
@@ -75,8 +76,15 @@ const CV = () => {
                         />
                     </div>
                     <div className={x.cv_content_profile_summary}>
-                        <input type="text" placeholder="Full name" style={{fontSize: name[0], fontWeight: name[1]}}/>
-                        <input type="text" placeholder="Profession" style={{fontSize: profession[0], fontWeight: profession[1]}}/>
+                        <Summary_line p_holder={"Full name"}/>
+
+                        <div className={x.cv_content_profile_summary_line}>
+                            <input type="text" placeholder="Profession" style={{fontSize: profession[0], fontWeight: profession[1]}}/>
+                            <div className={x.cv_content_profile_summary_line_penholder}>
+                                <Pen cls={x.cv_tools_pen} setter={setProfession} value={profession}/>
+                            </div>                         
+                        </div>
+                        
                         <br />
                         <span className={x.double}>
                             <FontAwesomeIcon icon={faMapLocationDot}/>

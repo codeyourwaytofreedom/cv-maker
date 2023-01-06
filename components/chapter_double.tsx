@@ -12,6 +12,7 @@ const Chapter_double = ({guide, title_holder, content_holder_L, content_holder_R
     const [tools, setTools] = useState(null);
     const [lines, setLines] = useState(2);
     const chapter_area = useRef();
+    const guide_border = "1px solid silver";
 
     useEffect(()=> {
         const handle_outside_click = (event) => {
@@ -26,27 +27,24 @@ const Chapter_double = ({guide, title_holder, content_holder_L, content_holder_R
         window.document.addEventListener("click", handle_outside_click)
     },[])
     return ( 
-        <>
                 <div className={x.cv_content_details_chapter} ref={chapter_area}>
-
-                
                 <div className={x.cv_content_details_chapter_title}>
                     <input type="text" placeholder={title_holder}  onFocus={()=> setTools("title")}
                         style={{fontSize: title_Styles[0], fontWeight: title_Styles[1], textDecoration: title_Styles[2],
-                        border:guide ? "1px solid silver" : "none"}}/>
+                        border:guide ? guide_border : "none"}}/>
                 </div>
 
                 <div className={x.cv_content_details_chapter_content}>
                     <div id={x.education_double}>
                         <div id={x.editable} contentEditable={true} onFocus={()=> setTools("content")}
                             style={{width:"90px",fontWeight:"400",fontSize:stly[0],
-                            border:guide ? "1px solid gray" : "none",}}>
+                            border:guide ? guide_border : "none",}}>
                             {content_holder_L}
                         </div>
                         <div id={x.editable} contentEditable={true} spellCheck={false} onFocus={()=> setTools("content")}
                                 style={{
                                 fontSize: stly[0], fontWeight: stly[1], fontFamily:"Oswald",
-                                border:guide ? "1px solid gray" : "none",
+                                border:guide ? guide_border : "none",
                                 width:"400px" }}
                         >        
                                 {content_holder_R}
@@ -91,22 +89,21 @@ const Chapter_double = ({guide, title_holder, content_holder_L, content_holder_R
                         <div className={x.cv_content_details_chapter_content}>
                             <div id={x.education_double}>
                                 <div id={x.editable} contentEditable={true} onFocus={()=> setTools("content")}
-                                style={{width:"90px",fontSize:stly[0], border:guide ? "1px solid gray" : "none",}}>
-                                    Year-Year
+                                style={{width:"90px",fontSize:stly[0], border:guide ? guide_border : "none",}}>
+                                    {content_holder_L}
                                 </div>
                                 <div id={x.editable} contentEditable={true} spellCheck={false} onFocus={()=> setTools("content")}
                                         style={{
                                         fontSize: stly[0], fontWeight: stly[1], fontFamily:"Oswald", width:"400px",
-                                        border:guide ? "1px solid gray" : "none", }}
+                                        border:guide ? guide_border : "none", }}
                                 >        
-                                        Faculty - Institution - etc
+                                        {content_holder_R}
                                 </div>
                             </div>
                         </div>
                         )
                 } 
                 </div>
-        </>
      );
 }
  

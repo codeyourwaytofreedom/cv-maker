@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Pen from "./pen";
 
 
-const Chapter = ({guide}) => {
+const Chapter = ({guide, title_holder, content_holder}) => {
     const [title_Styles, setTitle_Styes] = useState(["16px", 300, "none"]);
     const [stly, setStly] = useState(["16px", 300, "none"]);
     const [tools, setTools] = useState(null);
@@ -27,7 +27,7 @@ const Chapter = ({guide}) => {
     return ( 
         <div className={x.cv_content_details_chapter} ref={chapter_area}>
                 <div className={x.cv_content_details_chapter_title}>
-                    <input type="text" placeholder="Chapter Title" onFocus={()=> setTools("title")} style={{
+                    <input type="text" placeholder={title_holder} onFocus={()=> setTools("title")} style={{
                         fontSize: title_Styles[0], fontWeight:title_Styles[1], textDecoration:title_Styles[2], 
                         border:guide ? "1px solid silver" : "none"
                     }}/>
@@ -36,7 +36,7 @@ const Chapter = ({guide}) => {
                     <div id={x.editable} contentEditable={true} spellCheck={false} onFocus={()=> setTools("content")} style={{ width:"500px",
                         fontSize: stly[0], fontWeight:stly[1], textDecoration:stly[2], border:guide ? "1px solid silver" : "none"
                         }}>    
-                        Chapter Details
+                        {content_holder}
                     </div>
                 </div>
                 <div className={x.cv_content_details_chapter_content_controls} style={{display: tools ? "block" : "none"}}>

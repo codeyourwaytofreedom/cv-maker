@@ -12,8 +12,8 @@ const Details = () => {
     return ( 
         <div className={x.cv_content_details}>
 
-            <Chapter guide={guide}/>  
-            <Chapter guide={guide}/> 
+            <Chapter guide={guide} title_holder={"Personal Statement"} content_holder={"Personal statement goes here..."}/>  
+
             <Chapter_double 
                             title_holder={"Education"} 
                             content_holder_L={"Year-Year"} 

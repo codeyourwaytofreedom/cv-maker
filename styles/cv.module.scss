@@ -29,7 +29,7 @@
             position: relative;
             display: flex;
             column-gap: 10px;
-            top:115px;
+            //top:115px;
             padding-bottom: 5px;
             padding-left: 10px;
             @include pen_button;
@@ -73,6 +73,16 @@
                     column-gap: 10px;
                 }
                 @include input-styles;
+                &_line{
+                    border:2px solid black;
+                    position: relative;
+                    &_penholder{
+                        border: 1px solid red;
+                        position: absolute;
+                        top:0;
+                        left:-250px;
+                    }
+                }
             }
         }
         &_details{
