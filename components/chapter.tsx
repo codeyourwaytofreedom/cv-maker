@@ -3,10 +3,10 @@ import { useEffect, useRef, useState } from "react";
 import Pen from "./pen";
 
 
-const Chapter = () => {
+const Chapter = ({guide}) => {
     const [title_Styles, setTitle_Styes] = useState(["16px", 300, "none"]);
     const [stly, setStly] = useState(["16px", 300, "none"]);
-    const [tools, setTools] = useState(false);
+    const [tools, setTools] = useState(null);
 
     const chapter_area = useRef();
 
@@ -27,22 +27,31 @@ const Chapter = () => {
     return ( 
         <div className={x.cv_content_details_chapter} ref={chapter_area}>
                 <div className={x.cv_content_details_chapter_title}>
-                    <input type="text" placeholder="Chapter Title" onFocus={()=> setTools(true)} style={{
-                        fontSize: title_Styles[0], fontWeight:title_Styles[1], textDecoration:title_Styles[2], border:"1px solid silver"
+                    <input type="text" placeholder="Chapter Title" onFocus={()=> setTools("title")} style={{
+                        fontSize: title_Styles[0], fontWeight:title_Styles[1], textDecoration:title_Styles[2], 
+                        border:guide ? "1px solid silver" : "none"
                     }}/>
                 </div>
                 <div className={x.cv_content_details_chapter_content}>
-                    <div id={x.editable} contentEditable={true} spellCheck={false} onFocus={()=> setTools(true)} style={{ width:"500px",
-                        fontSize: stly[0], fontWeight:stly[1], textDecoration:stly[2], border:"1px solid silver"
+                    <div id={x.editable} contentEditable={true} spellCheck={false} onFocus={()=> setTools("content")} style={{ width:"500px",
+                        fontSize: stly[0], fontWeight:stly[1], textDecoration:stly[2], border:guide ? "1px solid silver" : "none"
                         }}>    
                         Chapter Details
                     </div>
                 </div>
                 <div className={x.cv_content_details_chapter_content_controls} style={{display: tools ? "block" : "none"}}>
-                        <h3>Title Styles</h3>
-                        <Pen cls={x.cv_content_details_tools_pen} setter={setTitle_Styes} value={title_Styles} und={true} />
-                        <h3>Content Styles</h3>
-                        <Pen cls={x.cv_content_details_tools_pen} setter={setStly} value={stly} und={true} />
+                        {
+                            tools === "title" ?
+                            <>
+                            <h3>Title Styles</h3>
+                            <Pen cls={x.cv_content_details_tools_pen} setter={setTitle_Styes} value={title_Styles} und={true} />
+                            </>
+                            :
+                            <>
+                            <h3>Content Styles</h3>
+                            <Pen cls={x.cv_content_details_tools_pen} setter={setStly} value={stly} und={false} />
+                            </>
+                        }
                 </div>
             </div>
      );
