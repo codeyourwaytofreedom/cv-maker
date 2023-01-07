@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import x from "../styles/cv.module.css";
 import Chapter from "./chapter";
 import Chapter_double from "./chapter_double";
+import Chapter_list from "./chapter_list";
 import Pen from "./pen";
 
 
@@ -12,19 +13,20 @@ const Details = () => {
     return ( 
         <div className={x.cv_content_details}>
 
-            <Chapter guide={guide} title_holder={"Personal Statement"} content_holder={"Personal statement goes here..."}/>  
+            <Chapter  title_holder={"Personal Statement"} content_holder={"Personal statement goes here..."}/>  
 
             <Chapter_double 
                             title_holder={"Education"} 
                             content_holder_L={"Year-Year"} 
                             content_holder_R={"Faculty - Institute - etc..."} 
-                            guide={guide}/>
+                            />
 
             <Chapter_double 
                             title_holder={"Language Skills"} 
                             content_holder_L={"Language"} 
                             content_holder_R={"Language Proficiency"} 
-                            guide={guide}/>
+                            />
+            <Chapter_list/>
             
         </div>
      );

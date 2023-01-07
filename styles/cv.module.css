@@ -58,7 +58,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 600px;
+  height: 1000px;
   width: 800px;
   position: relative;
   left: 230px;
@@ -164,6 +164,8 @@
   position: relative;
   display: grid;
   row-gap: 10px;
+  border-bottom: 1px solid silver;
+  padding-bottom: 10px;
 }
 .cv_content_details_chapter_content {
   text-align: justify;
@@ -196,7 +198,11 @@
   display: flex;
   -moz-column-gap: 15px;
        column-gap: 15px;
+  margin-bottom: 5px;
 }
 .cv_content_details_chapter_content #education_controls {
+  top: -45px;
+}
+.cv_content_details_chapter_content #software_controls {
   top: -45px;
 }/*# sourceMappingURL=cv.module.css.map */

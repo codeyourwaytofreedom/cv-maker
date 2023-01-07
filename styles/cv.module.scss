@@ -41,7 +41,7 @@
     &_content{
         @include flex-center;
         //border: 2px solid red;
-        height: 600px;
+        height: 1000px;
         width: 800px;
         position: relative;
         left: 230px;
@@ -119,6 +119,8 @@
                 position: relative;
                 display: grid;
                 row-gap: 10px;
+                border-bottom: 1px solid silver;
+                padding-bottom: 10px;
                 &_content{
                     text-align: justify;
                     width: 500px !important;
@@ -145,8 +147,12 @@
                     #education_extra{
                         display: flex;
                         column-gap: 15px;
+                        margin-bottom: 5px;
                     }
                     #education_controls{
+                        top:-45px;
+                    }
+                    #software_controls{
                         top:-45px;
                     }
                 }

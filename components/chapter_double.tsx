@@ -1,4 +1,4 @@
-import { faChevronCircleUp,faChevronCircleDown, faPlusCircle, faMinusCircle } from "@fortawesome/free-solid-svg-icons";
+import { faChevronCircleUp,faChevronCircleDown, faPlusCircle, faMinusCircle, faCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRef, useState, useEffect } from "react";
 import x from "../styles/cv.module.css";
@@ -13,6 +13,7 @@ const Chapter_double = ({guide, title_holder, content_holder_L, content_holder_R
     const [lines, setLines] = useState(2);
     const chapter_area = useRef();
     const guide_border = "1px solid silver";
+    const [color, setColor] = useState("green")
 
     useEffect(()=> {
         const handle_outside_click = (event) => {
@@ -74,8 +75,18 @@ const Chapter_double = ({guide, title_holder, content_holder_L, content_holder_R
                                         <FontAwesomeIcon icon={faMinusCircle} size={"2x"} 
                                         onClick={()=> lines > 0 ? setLines(lines-1) : setLines(lines)} />
                                         </span>
-                                        
                                     </div>
+
+                                    <div id={x.education_extra}>
+                                        <h3>Additional notes </h3>
+                                        <span style={{border:"1px solid black", borderRadius:"50%", padding:"2px",
+                                                    transform:"rotate(-10deg)", backgroundColor:color, cursor:"pointer"}}>
+                                            <FontAwesomeIcon icon={faCheck} size={"xl"} color={"white"}
+                                        onClick={()=> color === "green" ? setColor("black") : setColor("green")} />
+                                        </span>
+                                    </div>
+
+
                                     </>
                                     :
                                     null
@@ -104,6 +115,19 @@ const Chapter_double = ({guide, title_holder, content_holder_L, content_holder_R
                         </div>
                         )
                 } 
+                {
+                    color === "green" ?
+                    <div id={x.editable} contentEditable={true} spellCheck={false} onFocus={()=> setTools("content")}
+                                style={{
+                                fontSize: stly[0], fontWeight: stly[1], fontFamily:"Oswald",
+                                border:guide ? guide_border : "none",
+                                width:"500px" }}
+                        >        
+                                Additional notes
+                    </div>
+                    : null
+                }
+                
                 </div>
      );
 }
