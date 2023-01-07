@@ -32,7 +32,7 @@ const Chapter_list = () => {
         return (   
             <>
            
-                <Skill_title/>
+                <Skill_title title_holder={"Software Skills"}/>
                 {
                     [...Array(skills)].map(s=>
                             <New_skill/>
