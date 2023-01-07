@@ -50,7 +50,9 @@ const Chapter_double = ({guide, title_holder, content_holder_L, content_holder_R
                                 {content_holder_R}
                         </div>
                     </div>
-                    <div className={x.cv_content_details_chapter_content_controls} id={x.education_controls} 
+                    {
+                        tools ? 
+                        <div className={x.cv_content_details_chapter_content_controls} id={x.education_controls} 
                             style={{display: tools ? "block" : "none"}}>
                                 {
                                     tools === "title" ?
@@ -78,10 +80,9 @@ const Chapter_double = ({guide, title_holder, content_holder_L, content_holder_R
                                     :
                                     null
                                 }
-                        
-                        
-                        
-                    </div>
+                        </div>
+                        : null
+                    }
                 </div>
 
                 {

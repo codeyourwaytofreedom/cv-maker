@@ -74,10 +74,13 @@
                 }
                 @include input-styles;
                 &_line{
-                    border:2px solid black;
+                    //border:2px solid black;
                     position: relative;
+                    display: flex;
+                    column-gap: 10px;
+                    align-items: center;
                     &_penholder{
-                        border: 1px solid red;
+                        //border: 1px solid red;
                         position: absolute;
                         top:0;
                         left:-250px;

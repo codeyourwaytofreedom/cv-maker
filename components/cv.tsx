@@ -77,27 +77,18 @@ const CV = () => {
                     </div>
                     <div className={x.cv_content_profile_summary}>
                         <Summary_line p_holder={"Full name"}/>
-
-                        <div className={x.cv_content_profile_summary_line}>
-                            <input type="text" placeholder="Profession" style={{fontSize: profession[0], fontWeight: profession[1]}}/>
-                            <div className={x.cv_content_profile_summary_line_penholder}>
-                                <Pen cls={x.cv_tools_pen} setter={setProfession} value={profession}/>
-                            </div>                         
-                        </div>
+                        <Summary_line p_holder={"Profession"}/>
                         
                         <br />
-                        <span className={x.double}>
+                        <Summary_line p_holder={"Location"} icon={
                             <FontAwesomeIcon icon={faMapLocationDot}/>
-                            <input type="text" placeholder="Location" style={{fontSize: location[0], fontWeight: location[1]}}/>
-                        </span>
-                        <span className={x.double}>
+                        }/>
+                        <Summary_line p_holder={"Phone"} icon={
                             <FontAwesomeIcon icon={faPhone}/>
-                            <input type="text" placeholder="Phone" style={{fontSize: phone[0], fontWeight: phone[1]}}/>
-                        </span>
-                        <span className={x.double}>
+                        }/>
+                        <Summary_line p_holder={"Email"} icon={
                             <FontAwesomeIcon icon={faMailBulk}/>
-                            <input type="text" placeholder="Email" style={{fontSize: email[0], fontWeight: email[1]}}/>
-                        </span>
+                        }/>
                     </div>
                 </div>
 
