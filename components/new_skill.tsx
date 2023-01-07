@@ -41,14 +41,6 @@ const New_skill = () => {
                                         <>
                                         <h3>Title Styles</h3>
                                         <Pen cls={x.cv_content_details_tools_pen} setter={setTitle_Styes} value={title_Styles} und={true} />
-                                        <h3>Add new skill</h3>
-                                        <span>
-                                            <FontAwesomeIcon icon={faPlusCircle} size={"2x"} 
-                                                onClick={()=> skills < 10 ? setSkills(skills+1) : setSkills(skills)} />
-                                            <span> </span>
-                                            <FontAwesomeIcon icon={faMinusCircle} size={"2x"} 
-                                                onClick={()=> skills > 0 ? setSkills(skills-1) : setSkills(skills)} />
-                                        </span>
                                         </> 
                                         :
                                         tools === "content" ?

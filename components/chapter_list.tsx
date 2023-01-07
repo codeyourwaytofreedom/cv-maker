@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import x from "../styles/cv.module.css";
 import New_skill from "./new_skill";
 import Pen from "./pen";
+import Skill_title from "./skill_title";
 
 const Chapter_list = () => {
         const [title_Styles, setTitle_Styes] = useState(["16px", 300, "none"]);
@@ -28,18 +29,32 @@ const Chapter_list = () => {
         },[])
     
     
-        return ( 
-                    
-            <div className={x.cv_content_details_chapter} ref={chapter_area}>
-                <div className={x.cv_content_details_chapter_title}>
-                    <input type="text" placeholder="Software Skills"  onFocus={()=> setTools("title")}
-                        style={{fontSize: title_Styles[0], fontWeight: title_Styles[1], textDecoration: title_Styles[2], width:"400px"}}/>
-                </div>
-                <New_skill/>
-                <New_skill/>
-
-            </div>
-    )
+        return (   
+            <>
+           
+                <Skill_title/>
+                {
+                    [...Array(skills)].map(s=>
+                            <New_skill/>
+                        )
+                }
+               
+                <span style={{display:"flex", columnGap:"5px"}}> 
+                <span>Add new skill</span>
+                <FontAwesomeIcon icon={faPlusCircle} size={"xl"} onClick={()=> skills < 10 ? setSkills(skills+1) : setSkills(skills)}/>
+                <span> </span>
+                <FontAwesomeIcon icon={faMinusCircle} size={"xl"} onClick={()=>skills > 1 ? setSkills(skills-1) : setSkills(skills)}/>
+                </span> 
+    </> )
 }
  
 export default Chapter_list;
+
+
+
+{/* <h3>Add new skill</h3>
+<span>
+<FontAwesomeIcon icon={faPlusCircle} size={"xl"}/>
+<span> </span>
+<FontAwesomeIcon icon={faMinusCircle} size={"xl"}/>
+</span> */}

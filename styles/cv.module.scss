@@ -41,7 +41,7 @@
     &_content{
         @include flex-center;
         //border: 2px solid red;
-        height: 1000px;
+        height: 1900px;
         width: 800px;
         position: relative;
         left: 230px;
@@ -153,6 +153,9 @@
                         top:-45px;
                     }
                     #software_controls{
+                        top:0px;
+                    }
+                    #software_title__controls{
                         top:-45px;
                     }
                 }
