@@ -58,15 +58,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 1900px;
+  height: 2900px;
   width: 800px;
   position: relative;
-  left: 230px;
+  left: 330px;
 }
 .cv_content_profile {
   height: 100%;
-  border: 2px solid black;
-  padding: 30px;
+  padding-top: 30px;
+  padding-left: 20px;
 }
 .cv_content_profile_picture {
   width: 200px;
@@ -116,12 +116,11 @@
 }
 .cv_content_details {
   width: 600px;
-  border: 2px solid salmon;
   height: 100%;
   padding: 30px;
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+  row-gap: 10px;
 }
 .cv_content_details_tools {
   position: absolute;

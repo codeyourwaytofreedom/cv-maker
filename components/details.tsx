@@ -16,6 +16,9 @@ const Details = () => {
 
             <Chapter  title_holder={"Personal Statement"} content_holder={"Personal statement goes here..."}/>  
 
+            <Chapter  title_holder={"LinkedIn"} content_holder={"LinkedIn Profile"}/> 
+            <Chapter  title_holder={"GitHub"} content_holder={"GitHub Profile"}/> 
+
             <Skill_title title_holder={"Projects"}/>
             {
                 [...Array(project_number)].map( p => <Project/>)

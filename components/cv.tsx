@@ -10,8 +10,10 @@ import Details from "./details";
 import { useRef } from "react";
 import { jsPDF } from "jspdf";
 import html2canvas from "html2canvas";
+import h2c from "html2canvas";
 import Pen from "./pen";
 import Summary_line from "./summary_line";
+
 
 const CV = () => {
     const inputRef = useRef();
@@ -26,18 +28,11 @@ const CV = () => {
         const pdfWidth = pdf.internal.pageSize.getWidth();
         const pdfHeight =
           (imgProperties.height * pdfWidth) / imgProperties.width;
-    
-        pdf.addImage(data, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        pdf.addImage(data, 'JPEG', 0, 0, pdfWidth, pdfHeight);
         pdf.save('print.pdf');
       };
 
 
-
-    const [name, setName] = useState(["16px", 300]);
-    const [profession, setProfession] = useState(["16px", 300]);
-    const [location, setLocation] = useState(["16px", 300]);
-    const [phone, setPhone] = useState(["16px", 300]);
-    const [email, setEmail] = useState(["16px", 300]);
     const [position, setPosition] = useState([0,0, 100]);
     return ( 
         <div className={x.cv}>

@@ -41,14 +41,15 @@
     &_content{
         @include flex-center;
         //border: 2px solid red;
-        height: 1900px;
+        height: 2900px;
         width: 800px;
         position: relative;
-        left: 230px;
+        left: 330px;
         &_profile{
             height: 100%;
-            border: 2px solid black;
-            padding: 30px;
+            //border: 2px solid black;
+            padding-top:30px;
+            padding-left: 20px;
             &_picture{
                 width: 200px;
                 height: 200px;
@@ -90,12 +91,12 @@
         }
         &_details{
             width: 600px;
-            border: 2px solid salmon;
+            //border: 2px solid salmon;
             height: 100%;
             padding: 30px;
             display: flex;
             flex-direction: column;
-            row-gap: 20px;
+            row-gap: 10px;
             &_tools{
                 position: absolute;
                 //border:2px solid red;
