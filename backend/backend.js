@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const fs = require('fs')
 
 const port = 9000;
 
@@ -28,24 +27,53 @@ puppeteer.use(StealthPlugin());
 const cors = require('cors');
 app.use(cors());
 
+
+/* (async () => {
+  const browser = await puppeteer.launch({
+    args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
+    headless:true,
+    executablePath: executablePath()
+})
+  const page = await browser.newPage();
+  
+  await page.goto('https://www.youtube.com/', {
+    waitUntil: 'networkidle2'
+  });
+  
+  await page.pdf({
+      path: 'lcs.pdf',
+      format: 'a4',
+  });
+  
+  await browser.close();
+})(); */
+
+
+
 app.get("/cv",cors(), function(req, res) {
     async function run(){
-        const browser = await puppeteer.launch({
-            headless:true,
-            executablePath: executablePath()
-        })
-        const page = await browser.newPage()
-        
-        await page.goto("https://blog.logrocket.com/build-server-rendered-react-app-next-express/");
-        await page.waitForTimeout(5000);    
-        const pdf = await page.pdf({ format: 'A4', path: "xx.pdf"});
-        browser.close()
-        return pdf
-        //await page.screenshot({path: 'xx.pdf'});
-            
-        res.send("Test CV");
-            
-        
+      const url = req.query.target;
+    
+      const browser = await puppeteer.launch({ headless:true,
+        executablePath: executablePath()});
+      const page = await browser.newPage();
+      
+      await page.goto('https://www.youtube.com/', {
+          waitUntil: 'networkidle2'
+      });
+      
+      const pdf = await page.pdf({
+          path: 'test.pdf',
+          format: 'letter',
+          printBackground: true,
+          scale: 0.5,
+      });
+      
+      await browser.close();
+      
+      res.contentType("application/pdf");
+      res.send(pdf);
     }
     run()
+
 });
