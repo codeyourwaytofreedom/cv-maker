@@ -51,22 +51,19 @@ app.use(cors());
 
 
 app.get("/cv",cors(), function(req, res) {
-    async function run(){
-      const url = req.query.target;
-    
+    async function run(){    
       const browser = await puppeteer.launch({ headless:true,
         executablePath: executablePath()});
       const page = await browser.newPage();
       
-      await page.goto('https://www.youtube.com/', {
+      await page.goto('http://localhost:3000', {
           waitUntil: 'networkidle2'
-      });
-      
+      });        
       const pdf = await page.pdf({
           path: 'test.pdf',
-          format: 'letter',
+          format: 'a4',
           printBackground: true,
-          scale: 0.5,
+          scale: 1,
       });
       
       await browser.close();
