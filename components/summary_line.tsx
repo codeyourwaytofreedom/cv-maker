@@ -24,7 +24,8 @@ const Summary_line = ({p_holder, icon}) => {
     return ( 
         <div className={x.cv_content_profile_summary_line} ref={chapter_area}>
             {icon}
-            <input type="text" onFocus={()=> setTools(true)} placeholder={p_holder} style={{fontSize: style[0], fontWeight: style[1]}}/>   
+{/*             <input type="text" onFocus={()=> setTools(true)} placeholder={p_holder} style={{fontSize: style[0], fontWeight: style[1]}}/>   
+ */}            <div contentEditable={true} onFocus={()=> setTools(true)}  style={{fontSize: style[0], fontWeight: style[1]}} >{p_holder} </div>
             <div className={x.cv_content_profile_summary_line_penholder} style={{display: tools ? "block" : "none"}}>
                 <Pen cls={x.cv_tools_pen} setter={setStyle} value={style}/>
             </div>                         

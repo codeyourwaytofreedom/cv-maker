@@ -4,6 +4,10 @@ import { useRef } from "react";
 
 import pp from "../components/me.jpg";
 import Image from 'next/image';
+import Summary_line from "../components/summary_line";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronCircleUp, faChevronCircleDown, faChevronCircleLeft, faChevronCircleRight, faPlusCircle, faMinusCircle, faLocation, faPhone, faLocationPinLock, faLocationPin, faMapLocation, faLocationCrosshairs, faMapLocationDot, faMailForward, faMailBulk } from '@fortawesome/free-solid-svg-icons';
+import { useState } from "react";
 
 const Test = () => {
     const test = useRef();
@@ -35,11 +39,19 @@ const Test = () => {
                 />
                 </div>
                 <div className={x.cv_summary_text}>
-
+                <Summary_line p_holder={"Full name"}/>
+                <Summary_line p_holder={"Profession"}/>                        
+                <br />
+                <Summary_line p_holder={"Location"}/>
+                <Summary_line p_holder={"Phone"}/>
+                <Summary_line p_holder={"Email"}/>
+                    
                 </div>
             </div>
             <div className={x.cv_details}>
-                Details
+                <div contentEditable={true}>
+                        Fill me and see the result
+                </div>
             </div>
 
 

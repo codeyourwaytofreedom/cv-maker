@@ -19,16 +19,17 @@
                 position: relative;
                 width: 130%;
                 height: 150%;
+                bottom:10%;
             }
         }
         &_text{
             border:2px solid yellow;
-            height: 30px;
         }
     }
     &_details{
         border:2px solid blue;
         width: 550px;
+        padding-top: 20px;
     }
 }
 .controls{
