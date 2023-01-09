@@ -1,14 +1,38 @@
 
-.test{
+.cv{
     border: 1px solid red;
     width: 800px;
-    display: grid;
+    display: flex;
     position: relative;
-    font-size: 20px;
-    font-family:'Times New Roman', Times, serif !important;
-    text-align: justify;
-    padding: 10px;
-    &_link{
-        font-family:'Times New Roman', Times, serif !important;
+    &_summary{
+        border:2px solid green;
+        width: 250px;
+        display: grid;
+        justify-content: center;
+        padding-top: 20px;
+        &_picture{
+            border:2px solid red;
+            width: 230px;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            img{
+                position: relative;
+                width: 130%;
+                height: 150%;
+            }
+        }
+        &_text{
+            border:2px solid yellow;
+            height: 30px;
+        }
     }
+    &_details{
+        border:2px solid blue;
+        width: 550px;
+    }
+}
+.controls{
+    border: 2px solid purple;
+    width: 300px;
+
 }

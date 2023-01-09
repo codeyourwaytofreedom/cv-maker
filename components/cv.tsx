@@ -78,8 +78,8 @@ const CV = () => {
             <div className={x.cv_content} ref={inputRef} >
                 <div className={x.cv_content_profile}>
                     <div className={x.cv_content_profile_picture}>
-                        <Image ref={ppic}
-                            //fill={true}
+                        <Image
+                            fill={true}
                             src={pp}
                             alt="Profile Picture"
                             style={{width:`${position[2]}%`, height:"100%", left:position[0], top:position[1]}}

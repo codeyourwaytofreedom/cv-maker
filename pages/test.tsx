@@ -1,8 +1,9 @@
 import x from "../styles/test.module.css";
 import { jsPDF } from "jspdf";
 import { useRef } from "react";
-import Summary_line from "../components/summary_line";
 
+import pp from "../components/me.jpg";
+import Image from 'next/image';
 
 const Test = () => {
     const test = useRef();
@@ -23,31 +24,45 @@ const Test = () => {
     return ( 
         <>
         <div style={{display:"flex"}}>
-        <button onClick={trythis}>Click to test</button>
-        <button onClick={trythis}>Click to test</button>
-        <button onClick={trythis}>Click to test</button>
-        <div className={x.test} ref={test} contentEditable={true} >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Dolore consectetur voluptatibus sint libero laboriosam harum nostrum facilis 
-            exercitationem cumque inventore magni ducimus modi natus ea quasi, 
-            qui architecto veritatis in. Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-            Ducimus nostrum necessitatibus dolores quis esse provident voluptatum, eveniet 
-            maxime ab ex corporis architecto iusto praesentium non, repudiandae dolorem sint, optio id.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Dolore consectetur voluptatibus sint libero laboriosam harum nostrum facilis 
-            exercitationem cumque inventore magni ducimus modi natus ea quasi, 
-            qui architecto veritatis in. Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-            Ducimus nostrum necessitatibus dolores quis esse provident voluptatum, eveniet 
-            maxime ab ex corporis architecto iusto praesentium non, repudiandae dolorem sint, optio id.
+        <div className={x.controls}>
+        </div>
+        <div className={x.cv} ref={test} >
+            <div className={x.cv_summary}>
+                <div className={x.cv_summary_picture}>
+                <Image
+                    src={pp}
+                    alt="Profile Picture"
+                />
+                </div>
+                <div className={x.cv_summary_text}>
 
-            <Summary_line p_holder={"Testing pdf shot"}/> 
-            <div contentEditable={true} className={x.test_link}>
-                    Edit me
+                </div>
             </div>
+            <div className={x.cv_details}>
+                Details
+            </div>
+
+
         </div>
+        
         </div>
+        <button onClick={trythis}>Click to test</button>
         </>
      );
 }
  
 export default Test;
+
+
+/* Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+Dolore consectetur voluptatibus sint libero laboriosam harum nostrum facilis 
+exercitationem cumque inventore magni ducimus modi natus ea quasi, 
+qui architecto veritatis in. Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+Ducimus nostrum necessitatibus dolores quis esse provident voluptatum, eveniet 
+maxime ab ex corporis architecto iusto praesentium non, repudiandae dolorem sint, optio id.
+Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+Dolore consectetur voluptatibus sint libero laboriosam harum nostrum facilis 
+exercitationem cumque inventore magni ducimus modi natus ea quasi, 
+qui architecto veritatis in. Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+Ducimus nostrum necessitatibus dolores quis esse provident voluptatum, eveniet 
+maxime ab ex corporis architecto iusto praesentium non, repudiandae dolorem sint, optio id. */
