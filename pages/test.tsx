@@ -1,6 +1,7 @@
 import x from "../styles/test.module.css";
 import { jsPDF } from "jspdf";
 import { useRef } from "react";
+import Summary_line from "../components/summary_line";
 
 
 const Test = () => {
@@ -11,46 +12,38 @@ const Test = () => {
         callback: function (doc) {
             doc.save();
         },
-        x: 10,
-        y: 10,
-        width:500,
-        windowWidth:2400,
+        x: 0,
+        y: 0,
+        width:919,
+        windowWidth:3500,
         autoPaging:"text",
         });
         };
 
     return ( 
         <>
-        <div ref={test} onClick={trythis}>
-        <div className={x.test}>
-            With the permission of Allah, I will take care of this problem as well.
-            May Allah help me. With the permission of Allah, I will take care of this problem as well.
-            May Allah help me. With the permission of Allah, I will take care of this problem as well.
-            May Allah help me. With the permission of Allah, I will take care of this problem as well.
-            May Allah help me. With the permission of Allah, I will take care of this problem as well.
-            May Allah help me. With the permission of Allah, I will take care of this problem as well.
-            May Allah help me. With the permission of Allah, I will take care of this problem as well.
-            May Allah help me. 
-        </div>
-        <div className={x.test}>
-            With the permission of Allah, I will take care of this problem as well.
-            May Allah help me. With the permission of Allah, I will take care of this problem as well.
-            May Allah help me. With the permission of Allah, I will take care of this problem as well.
-            May Allah help me. With the permission of Allah, I will take care of this problem as well.
-            May Allah help me. With the permission of Allah, I will take care of this problem as well.
-            May Allah help me. With the permission of Allah, I will take care of this problem as well.
-            May Allah help me. With the permission of Allah, I will take care of this problem as well.
-            May Allah help me. 
-        </div>
-        <div className={x.test}>
-            With the permission of Allah, I will take care of this problem as well.
-            May Allah help me. With the permission of Allah, I will take care of this problem as well.
-            May Allah help me. With the permission of Allah, I will take care of this problem as well.
-            May Allah help me. With the permission of Allah, I will take care of this problem as well.
-            May Allah help me. With the permission of Allah, I will take care of this problem as well.
-            May Allah help me. With the permission of Allah, I will take care of this problem as well.
-            May Allah help me. With the permission of Allah, I will take care of this problem as well.
-            May Allah help me. 
+        <div style={{display:"flex"}}>
+        <button onClick={trythis}>Click to test</button>
+        <button onClick={trythis}>Click to test</button>
+        <button onClick={trythis}>Click to test</button>
+        <div className={x.test} ref={test} contentEditable={true} >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Dolore consectetur voluptatibus sint libero laboriosam harum nostrum facilis 
+            exercitationem cumque inventore magni ducimus modi natus ea quasi, 
+            qui architecto veritatis in. Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            Ducimus nostrum necessitatibus dolores quis esse provident voluptatum, eveniet 
+            maxime ab ex corporis architecto iusto praesentium non, repudiandae dolorem sint, optio id.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Dolore consectetur voluptatibus sint libero laboriosam harum nostrum facilis 
+            exercitationem cumque inventore magni ducimus modi natus ea quasi, 
+            qui architecto veritatis in. Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            Ducimus nostrum necessitatibus dolores quis esse provident voluptatum, eveniet 
+            maxime ab ex corporis architecto iusto praesentium non, repudiandae dolorem sint, optio id.
+
+            <Summary_line p_holder={"Testing pdf shot"}/> 
+            <div contentEditable={true} className={x.test_link}>
+                    Edit me
+            </div>
         </div>
         </div>
         </>

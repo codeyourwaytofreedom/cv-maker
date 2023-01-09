@@ -1,9 +1,13 @@
 .test {
-  border: 3px solid red;
-  width: 500px;
-  height: 500px;
+  border: 1px solid red;
+  width: 800px;
   display: grid;
   position: relative;
   font-size: 20px;
+  font-family: "Times New Roman", Times, serif !important;
+  text-align: justify;
+  padding: 10px;
+}
+.test_link {
   font-family: "Times New Roman", Times, serif !important;
 }/*# sourceMappingURL=test.module.css.map */

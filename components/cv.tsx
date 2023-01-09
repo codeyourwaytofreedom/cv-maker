@@ -36,16 +36,17 @@ const CV = () => {
     
       const trythis = async () => {
         var doc = new jsPDF();
-
-    doc.html(inputRef.current.innerHTML, {
-    callback: function (doc) {
-        doc.save();
-    },
-    x: 10,
-    y: 10,
-    width:900
-    });
-      };
+        doc.html(inputRef.current, {
+        callback: function (doc) {
+            doc.save();
+        },
+        x: 10,
+        y: 10,
+        width:900,
+        windowWidth:2400,
+        autoPaging:"text",
+        });
+        };
 
     const [position, setPosition] = useState([0,0, 100]);
     return ( 
@@ -74,7 +75,7 @@ const CV = () => {
                     <Pen cls={x.cv_tools_pencil} setter={setEmail} value={email}/>  */}
             </div>
 
-            <div className={x.cv_content} ref={inputRef}>
+            <div className={x.cv_content} ref={inputRef} >
                 <div className={x.cv_content_profile}>
                     <div className={x.cv_content_profile_picture}>
                         <Image ref={ppic}
