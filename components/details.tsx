@@ -1,3 +1,4 @@
+import { spawn } from "child_process";
 import { useRef, useState } from "react";
 import x from "../styles/cv.module.css";
 import Adder from "./adder";
@@ -9,13 +10,11 @@ import Project from "./project";
 import Skill_title from "./skill_title";
 
 const Details = () => {
-    const guide = true;
     const [project_number, setProject_number] = useState(1)
+
     return ( 
         <div className={x.cv_content_details}>
-
             <Chapter  title_holder={"Personal Statement"} content_holder={"Personal statement goes here..."}/>  
-
             <Chapter  title_holder={"LinkedIn"} content_holder={"LinkedIn Profile"}/> 
             <Chapter  title_holder={"GitHub"} content_holder={"GitHub Profile"}/> 
 

@@ -1,7 +1,9 @@
 .test {
   border: 3px solid red;
-  width: 900px;
+  width: 500px;
+  height: 500px;
   display: grid;
   position: relative;
-  top: 200px;
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif !important;
 }/*# sourceMappingURL=test.module.css.map */

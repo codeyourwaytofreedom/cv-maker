@@ -3,6 +3,16 @@ const app = express();
 
 const port = 9000;
 
+var html_to_pdf = require('html-pdf-node');
+
+
+let options = { format: 'A4' };
+let file = [{ url: "https://example.com", name: 'example.pdf' }];
+
+html_to_pdf.generatePdfs(file, options).then(output => {
+  console.log("PDF Buffer:-", output); // PDF Buffer:- [{url: "https://example.com", name: "example.pdf", buffer: <PDF buffer>}]
+});
+
 
 
 app.get('/', (req, res) => {
@@ -56,16 +66,20 @@ app.get("/cv",cors(), function(req, res) {
         executablePath: executablePath()});
       const page = await browser.newPage();
       
-      await page.goto('http://localhost:3000', {
-          waitUntil: 'networkidle2'
-      });        
+      await page.goto('http://localhost:3000');
+        
       const pdf = await page.pdf({
           path: 'test.pdf',
           format: 'a4',
           printBackground: true,
           scale: 1,
       });
-      
+
+      await page.screenshot({                      // Screenshot the website using defined options
+        path: "./screenshot.png",                   // Save the screenshot in current directory
+        fullPage: true                              // take a fullpage screenshot
+      });
+     
       await browser.close();
       
       res.contentType("application/pdf");

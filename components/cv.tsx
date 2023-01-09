@@ -17,13 +17,15 @@ import Summary_line from "./summary_line";
 
 const CV = () => {
     const inputRef = useRef();
+    const ppic = useRef();
+    const [test_text, setTest_text] = useState("Download");
 
     const handleDownloadPdf = async () => {
         const element = inputRef.current;
         const canvas = await html2canvas(element);
         const data = canvas.toDataURL('image/png');
     
-        const pdf = new jsPDF();
+        const pdf = new jsPDF('p', 'mm', 'a4');
         const imgProperties = pdf.getImageProperties(data);
         const pdfWidth = pdf.internal.pageSize.getWidth();
         const pdfHeight =
@@ -31,14 +33,26 @@ const CV = () => {
         pdf.addImage(data, 'JPEG', 0, 0, pdfWidth, pdfHeight);
         pdf.save('print.pdf');
       };
+    
+      const trythis = async () => {
+        var doc = new jsPDF();
 
+    doc.html(inputRef.current.innerHTML, {
+    callback: function (doc) {
+        doc.save();
+    },
+    x: 10,
+    y: 10,
+    width:900
+    });
+      };
 
     const [position, setPosition] = useState([0,0, 100]);
     return ( 
         <div className={x.cv}>
             <div className={x.cv_config}>
                 Configuration options go here...
-                <button onClick={handleDownloadPdf}>TEST</button>
+                <button onClick={trythis}>{test_text}</button>
             </div>
 
             <div className={x.cv_tools} >
@@ -63,7 +77,7 @@ const CV = () => {
             <div className={x.cv_content} ref={inputRef}>
                 <div className={x.cv_content_profile}>
                     <div className={x.cv_content_profile_picture}>
-                        <Image
+                        <Image ref={ppic}
                             //fill={true}
                             src={pp}
                             alt="Profile Picture"
@@ -72,8 +86,7 @@ const CV = () => {
                     </div>
                     <div className={x.cv_content_profile_summary}>
                         <Summary_line p_holder={"Full name"}/>
-                        <Summary_line p_holder={"Profession"}/>
-                        
+                        <Summary_line p_holder={"Profession"}/>                        
                         <br />
                         <Summary_line p_holder={"Location"} icon={
                             <FontAwesomeIcon icon={faMapLocationDot}/>
