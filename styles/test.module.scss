@@ -1,33 +1,38 @@
 
 .cv{
-    border: 1px solid red;
+    //border: 1px solid red;
     width: 800px;
     display: flex;
     position: relative;
     &_summary{
-        border:2px solid green;
+        border:1px solid white;
         width: 250px;
         display: grid;
         justify-content: center;
         padding-top: 20px;
         &_picture{
-            border:2px solid red;
+            border:2px solid white;
             width: 230px;
             aspect-ratio: 1/1;
             overflow: hidden;
+            border-radius: 10px;
             img{
                 position: relative;
                 width: 130%;
                 height: 150%;
                 bottom:10%;
+                border-radius: 10px;
             }
         }
         &_text{
-            border:2px solid yellow;
+            //border:2px solid peru;
+            display: grid;
+            row-gap: 5px;
+            padding: 10px;
         }
     }
     &_details{
-        border:2px solid blue;
+        //border:2px solid blue;
         width: 550px;
         padding-top: 20px;
     }
@@ -35,5 +40,4 @@
 .controls{
     border: 2px solid purple;
     width: 300px;
-
 }

@@ -53,7 +53,7 @@ const CV = () => {
         <div className={x.cv}>
             <div className={x.cv_config}>
                 Configuration options go here...
-                <button onClick={trythis}>{test_text}</button>
+                <button onClick={handleDownloadPdf}>{test_text}</button>
             </div>
 
             <div className={x.cv_tools} >

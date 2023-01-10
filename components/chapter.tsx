@@ -33,7 +33,7 @@ const Chapter = ({guide, title_holder, content_holder}) => {
                     }}/>
                 </div>
                 <div className={x.cv_content_details_chapter_content}>
-                    <div id={x.editable} contentEditable={true} spellCheck={false} onFocus={()=> setTools("content")} style={{ width:"500px",
+                    <div id={x.editable} contentEditable={true} spellCheck={false} onFocus={()=> setTools("content")} style={{ width:"540px",
                         fontSize: stly[0], fontWeight:stly[1], textDecoration:stly[2], border:guide ? "1px solid silver" : "none"
                         }}>    
                         {content_holder}

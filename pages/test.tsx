@@ -8,6 +8,7 @@ import Summary_line from "../components/summary_line";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleUp, faChevronCircleDown, faChevronCircleLeft, faChevronCircleRight, faPlusCircle, faMinusCircle, faLocation, faPhone, faLocationPinLock, faLocationPin, faMapLocation, faLocationCrosshairs, faMapLocationDot, faMailForward, faMailBulk } from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
+import Chapter from "../components/chapter";
 
 const Test = () => {
     const test = useRef();
@@ -49,9 +50,9 @@ const Test = () => {
                 </div>
             </div>
             <div className={x.cv_details}>
-                <div contentEditable={true}>
-                        Fill me and see the result
-                </div>
+                <Chapter  title_holder={"Personal Statement"} content_holder={"Personal statement goes here..."}/>  
+                <Chapter  title_holder={"LinkedIn"} content_holder={"LinkedIn Profile"}/> 
+                <Chapter  title_holder={"GitHub"} content_holder={"GitHub Profile"}/> 
             </div>
 
 
