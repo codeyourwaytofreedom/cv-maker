@@ -18,21 +18,25 @@ import Chapter_list from "../components/chapter_list";
 
 const Test = () => {
     const test = useRef();
-    const trythis = async () => {
-        var doc = new jsPDF();
-        doc.html(test.current, {
-        callback: function (doc) {
-            doc.save();
-        },
-        x: 0,
-        y: 0,
-        width:919,
-        windowWidth:3500,
-        autoPaging:"text",
-        });
+    const trythis = () => {
+        setHide(true)
+            setTimeout(() => {
+                var doc = new jsPDF();
+                doc.html(test.current, {
+                callback: function (doc) {
+                    doc.save();
+                },
+                x: 0,
+                y: 0,
+                width:919,
+                windowWidth:3500,
+                autoPaging:"text",
+                });
+            }, 2000);
         };
 
-        const [project_number, setProject_number] = useState(1)
+    const [project_number, setProject_number] = useState(1)
+    const [hide, setHide] = useState(false)
 
     return ( 
         <>
@@ -70,8 +74,9 @@ const Test = () => {
                 {
                     [...Array(project_number)].map( p => <Project/>)
                 }
-                <Adder min={1} max={20} setter={setProject_number} set={project_number} text={"Add new project"}/>
-
+                {
+                    !hide ? <Adder min={1} max={20} setter={setProject_number} set={project_number} text={"Add new project"}/> : null
+                }
                 <Chapter_double 
                             title_holder={"Education"} 
                             content_holder_L={"Year-Year"} 
@@ -83,8 +88,7 @@ const Test = () => {
                             content_holder_R={"Language Proficiency"} 
                             />
                 <Skill_title title_holder={"Software Skills"}/>
-                <Chapter_list/>
-
+                <Chapter_list hide={hide}/>
             </div>
 
 
@@ -96,17 +100,3 @@ const Test = () => {
 }
  
 export default Test;
-
-
-/* Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-Dolore consectetur voluptatibus sint libero laboriosam harum nostrum facilis 
-exercitationem cumque inventore magni ducimus modi natus ea quasi, 
-qui architecto veritatis in. Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-Ducimus nostrum necessitatibus dolores quis esse provident voluptatum, eveniet 
-maxime ab ex corporis architecto iusto praesentium non, repudiandae dolorem sint, optio id.
-Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-Dolore consectetur voluptatibus sint libero laboriosam harum nostrum facilis 
-exercitationem cumque inventore magni ducimus modi natus ea quasi, 
-qui architecto veritatis in. Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-Ducimus nostrum necessitatibus dolores quis esse provident voluptatum, eveniet 
-maxime ab ex corporis architecto iusto praesentium non, repudiandae dolorem sint, optio id. */

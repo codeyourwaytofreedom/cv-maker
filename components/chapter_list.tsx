@@ -7,13 +7,10 @@ import New_skill from "./new_skill";
 import Pen from "./pen";
 import Skill_title from "./skill_title";
 
-const Chapter_list = () => {
-        const [title_Styles, setTitle_Styes] = useState(["16px", 300, "none"]);
-        const [stly, setStly] = useState(["16px", 300, "none"]);
+const Chapter_list = ({hide}) => {
         const [tools, setTools] = useState(null);
         const [lines, setLines] = useState(2);
         const chapter_area = useRef();
-        const [color, setColor] = useState("green");
         const [skills, setSkills] = useState(1);
     
         useEffect(()=> {
@@ -37,7 +34,10 @@ const Chapter_list = () => {
                             <New_skill/>
                         )
                 }
-                <Adder min={1} max={20} setter={setSkills} set={skills} text={"Add new skill"}/>
+                {
+                    !hide ? <Adder min={1} max={20} setter={setSkills} set={skills} text={"Add new skill"}/> : null
+                }
+                
     </> )
 }
  
