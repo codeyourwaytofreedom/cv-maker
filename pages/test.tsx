@@ -40,6 +40,9 @@ const Test = () => {
                 />
                 </div>
                 <div className={x.cv_summary_text}>
+                   <span>
+                   <strong>Testing Bold</strong>
+                    </span> 
                 <Summary_line p_holder={"Full name"}/>
                 <Summary_line p_holder={"Profession"}/>                        
                 <br />
