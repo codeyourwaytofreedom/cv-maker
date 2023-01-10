@@ -27,7 +27,6 @@
 }
 .cv_summary_text {
   display: grid;
-  row-gap: 5px;
   padding: 10px;
 }
 .cv_details {

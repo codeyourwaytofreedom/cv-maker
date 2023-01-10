@@ -35,6 +35,7 @@
        column-gap: 10px;
   padding-bottom: 5px;
   padding-left: 10px;
+  z-index: 1 !important;
 }
 .cv_tools_pen button, .cv_tools_pencil button {
   border: none;

@@ -39,11 +39,8 @@ const Project = () => {
                 </div>
 
                 <div className={x.cv_content_details_chapter_content}>   
-                    <span style={{ fontSize: stly[0]}}>
-                        <FontAwesomeIcon icon={faLink} color={"darkgreen"}/>
-                    </span>
                     <div id={x.editable} contentEditable={true} spellCheck={false} onFocus={()=> setTools("content")} style={{ width:"500px",
-                        fontSize: title_Styles[0], fontWeight:title_Styles[1], textDecoration:title_Styles[2]
+                        fontSize: title_Styles[0], fontWeight:title_Styles[1]  === 600 ? "bolder" : "400", textDecoration:title_Styles[2]
                         }}>    
                         Project Name
                     </div>
@@ -55,7 +52,7 @@ const Project = () => {
                 {/* Control Panel */}
                 <div className={x.cv_content_details_chapter_content}>   
                     <div id={x.editable} contentEditable={true} spellCheck={false} onFocus={()=> setTools("project_detail")} style={{ width:"500px",
-                        fontSize: stly[0], fontWeight:stly[1], textDecoration:stly[2]
+                        fontSize: stly[0], fontWeight:stly[1] === 600 ? "bolder" : "400", textDecoration:stly[2]
                         }}>    
                         Details
                     </div>

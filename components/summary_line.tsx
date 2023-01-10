@@ -3,7 +3,7 @@ import x from "../styles/cv.module.css";
 import Pen from "./pen";
 
 
-const Summary_line = ({p_holder, icon}) => {
+const Summary_line = ({p_holder}) => {
     
     const [tools, setTools] = useState(null);
     const chapter_area = useRef();
@@ -26,9 +26,9 @@ const Summary_line = ({p_holder, icon}) => {
             {
                 style[1] === 600 ?
 
-                        <div contentEditable={true} onFocus={()=> setTools(true)}  style={{fontSize: style[0], fontWeight: "bolder"}} >{p_holder}</div>
+                        <div contentEditable={true} onFocus={()=> setTools(true)}  style={{fontSize: style[0], fontWeight: "bolder", zIndex:40}} >{p_holder}</div>
                     :
-                        <div contentEditable={true} onFocus={()=> setTools(true)}  style={{fontSize: style[0], fontWeight: style[1]}} >{p_holder}</div>
+                        <div contentEditable={true} onFocus={()=> setTools(true)}  style={{fontSize: style[0], fontWeight: style[1], zIndex:40}} >{p_holder}</div>
 
             }
             

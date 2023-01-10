@@ -33,6 +33,7 @@
             padding-bottom: 5px;
             padding-left: 10px;
             @include pen_button;
+            z-index: 1 !important;
         }
         &_pencil{
             top:110px;

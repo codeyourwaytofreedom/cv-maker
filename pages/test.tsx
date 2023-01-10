@@ -10,6 +10,8 @@ import { faChevronCircleUp, faChevronCircleDown, faChevronCircleLeft, faChevronC
 import { useState } from "react";
 import Chapter from "../components/chapter";
 import Chapter_double from "../components/chapter_double";
+import Skill_title from "../components/skill_title";
+import Project from "../components/project";
 
 const Test = () => {
     const test = useRef();
@@ -26,6 +28,8 @@ const Test = () => {
         autoPaging:"text",
         });
         };
+
+        const [project_number, setProject_number] = useState(1)
 
     return ( 
         <>
@@ -53,11 +57,21 @@ const Test = () => {
                 <Chapter  title_holder={"Personal Statement"} content_holder={"Personal statement goes here..."}/>  
                 <Chapter  title_holder={"LinkedIn"} content_holder={"LinkedIn Profile"}/> 
                 <Chapter  title_holder={"GitHub"} content_holder={"GitHub Profile"}/> 
+
+                <Skill_title title_holder={"Projects"}/>
+{/*                 {
+                    [...Array(project_number)].map( p => <Project/>)
+                } */}
                 <Chapter_double 
                             title_holder={"Education"} 
                             content_holder_L={"Year-Year"} 
                             content_holder_R={"Faculty - Institute - etc..."} 
                             />
+                <Project/>
+                <Project/>
+                <Project/>
+                <Project/>
+
             </div>
 
 

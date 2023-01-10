@@ -32,8 +32,13 @@ const Skill_title = ({title_holder}) => {
     return ( 
         <>
         <div className={x.cv_content_details_chapter_title} ref={chapter_area}>
-                    <input type="text" placeholder={title_holder}  onFocus={()=> setTools("title")}
-                        style={{fontSize: title_Styles[0], fontWeight: title_Styles[1], textDecoration: title_Styles[2], width:"400px"}}/>
+{/*                     <input type="text" placeholder={title_holder}  onFocus={()=> setTools("title")}
+                        style={{fontSize: title_Styles[0], fontWeight: title_Styles[1], textDecoration: title_Styles[2], width:"400px"}}/> */}
+                    
+                    <div contentEditable={true} onFocus={()=> setTools("title")}
+                        style={{fontSize: title_Styles[0], fontWeight: title_Styles[1] === 600 ? "bolder" : "400", textDecoration: title_Styles[2], width:"400px"}}>
+                        {title_holder} 
+                    </div>
 
                 {
                     tools && 
