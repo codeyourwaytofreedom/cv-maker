@@ -5,7 +5,7 @@ import Pen from "./pen";
 
 const Chapter = ({guide, title_holder, content_holder}) => {
     const [title_Styles, setTitle_Styes] = useState(["16px", 300, "none"]);
-    const [stly, setStly] = useState(["16px", 300, "none"]);
+    const [stly, setStly] = useState(["16px", 400, "none"]);
     const [tools, setTools] = useState(null);
 
     const chapter_area = useRef();
@@ -27,14 +27,20 @@ const Chapter = ({guide, title_holder, content_holder}) => {
     return ( 
         <div className={x.cv_content_details_chapter} ref={chapter_area}>
                 <div className={x.cv_content_details_chapter_title}>
-                    <input type="text" placeholder={title_holder} onFocus={()=> setTools("title")} style={{
-                        fontSize: title_Styles[0], fontWeight:title_Styles[1], textDecoration:title_Styles[2], 
+{/*                     <input type="text" placeholder={title_holder} onFocus={()=> setTools("title")} style={{
+                        fontSize: title_Styles[0], fontWeight:title_Styles[1] === 600 ? "bolder" : "400", textDecoration:title_Styles[2] === "underline" ? "underline" : "none", 
                         border:guide ? "1px solid silver" : "none"
-                    }}/>
+                    }}/> */}
+                    <div contentEditable={true}  onFocus={()=> setTools("title")} style={{
+                        fontSize: title_Styles[0], fontWeight:title_Styles[1] === 600 ? "bolder" : "400", textDecoration:title_Styles[2] === "underline" ? "underline" : "none", 
+                        border:guide ? "1px solid silver" : "none",
+                    }}>
+                            {title_holder}
+                    </div>
                 </div>
                 <div className={x.cv_content_details_chapter_content}>
                     <div id={x.editable} contentEditable={true} spellCheck={false} onFocus={()=> setTools("content")} style={{ width:"540px",
-                        fontSize: stly[0], fontWeight:stly[1], textDecoration:stly[2], border:guide ? "1px solid silver" : "none"
+                        fontSize: stly[0], fontWeight:stly[1] === 600 ? "bolder" : "400", border:guide ? "1px solid silver" : "none"
                         }}>    
                         {content_holder}
                     </div>

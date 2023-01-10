@@ -9,6 +9,7 @@
   display: grid;
   justify-content: center;
   padding-top: 20px;
+  align-content: flex-start;
 }
 .cv_summary_picture {
   border: 2px solid white;

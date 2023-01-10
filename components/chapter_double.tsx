@@ -30,21 +30,26 @@ const Chapter_double = ({guide, title_holder, content_holder_L, content_holder_R
     return ( 
                 <div className={x.cv_content_details_chapter} ref={chapter_area}>
                 <div className={x.cv_content_details_chapter_title}>
-                    <input type="text" placeholder={title_holder}  onFocus={()=> setTools("title")}
+{/*                     <input type="text" placeholder={title_holder}  onFocus={()=> setTools("title")}
                         style={{fontSize: title_Styles[0], fontWeight: title_Styles[1], textDecoration: title_Styles[2],
-                        border:guide ? guide_border : "none"}}/>
+                        border:guide ? guide_border : "none"}}/> */}
+                    <div contentEditable={true} onFocus={()=> setTools("title")}
+                        style={{fontSize: title_Styles[0], fontWeight: title_Styles[1] === 600 ? "bolder" : "400", textDecoration: title_Styles[2],
+                        border:guide ? guide_border : "none"}}>
+                        {title_holder}
+                    </div>
                 </div>
 
                 <div className={x.cv_content_details_chapter_content}>
                     <div id={x.education_double}>
                         <div id={x.editable} contentEditable={true} onFocus={()=> setTools("content")}
-                            style={{width:"90px",fontWeight:"400",fontSize:stly[0],
+                            style={{width:"90px",fontWeight: "bolder",fontSize:stly[0],
                             border:guide ? guide_border : "none",}}>
                             {content_holder_L}
                         </div>
                         <div id={x.editable} contentEditable={true} spellCheck={false} onFocus={()=> setTools("content")}
                                 style={{
-                                fontSize: stly[0], fontWeight: stly[1], fontFamily:"Oswald",
+                                fontSize: stly[0], fontWeight: stly[1] === 600 ? "bolder" : "400", fontFamily:"Oswald",
                                 border:guide ? guide_border : "none",
                                 width:"400px" }}
                         >        
@@ -101,7 +106,7 @@ const Chapter_double = ({guide, title_holder, content_holder_L, content_holder_R
                         <div className={x.cv_content_details_chapter_content}>
                             <div id={x.education_double}>
                                 <div id={x.editable} contentEditable={true} onFocus={()=> setTools("content")}
-                                style={{width:"90px",fontSize:stly[0], border:guide ? guide_border : "none",}}>
+                                style={{width:"90px",fontWeight: "bolder", fontSize:stly[0], border:guide ? guide_border : "none",}}>
                                     {content_holder_L}
                                 </div>
                                 <div id={x.editable} contentEditable={true} spellCheck={false} onFocus={()=> setTools("content")}

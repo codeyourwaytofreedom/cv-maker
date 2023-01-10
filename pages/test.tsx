@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleUp, faChevronCircleDown, faChevronCircleLeft, faChevronCircleRight, faPlusCircle, faMinusCircle, faLocation, faPhone, faLocationPinLock, faLocationPin, faMapLocation, faLocationCrosshairs, faMapLocationDot, faMailForward, faMailBulk } from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
 import Chapter from "../components/chapter";
+import Chapter_double from "../components/chapter_double";
 
 const Test = () => {
     const test = useRef();
@@ -40,22 +41,23 @@ const Test = () => {
                 />
                 </div>
                 <div className={x.cv_summary_text}>
-                   <span>
-                   <strong>Testing Bold</strong>
-                    </span> 
-                <Summary_line p_holder={"Full name"}/>
-                <Summary_line p_holder={"Profession"}/>                        
-                <br />
-                <Summary_line p_holder={"Location"}/>
-                <Summary_line p_holder={"Phone"}/>
-                <Summary_line p_holder={"Email"}/>
-                    
+                    <Summary_line p_holder={"Full name"}/>
+                    <Summary_line p_holder={"Profession"}/>                        
+                    <br />
+                    <Summary_line p_holder={"Location"}/>
+                    <Summary_line p_holder={"Phone"}/>
+                    <Summary_line p_holder={"Email"}/>
                 </div>
             </div>
             <div className={x.cv_details}>
                 <Chapter  title_holder={"Personal Statement"} content_holder={"Personal statement goes here..."}/>  
                 <Chapter  title_holder={"LinkedIn"} content_holder={"LinkedIn Profile"}/> 
                 <Chapter  title_holder={"GitHub"} content_holder={"GitHub Profile"}/> 
+                <Chapter_double 
+                            title_holder={"Education"} 
+                            content_holder_L={"Year-Year"} 
+                            content_holder_R={"Faculty - Institute - etc..."} 
+                            />
             </div>
 
 
