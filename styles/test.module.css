@@ -35,6 +35,89 @@
 }
 
 .controls {
-  border: 2px solid purple;
-  width: 300px;
+  width: 350px;
+}
+.controls button {
+  position: fixed;
+  top: 110px;
+  left: 100px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 25px;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 5px;
+}
+.controls_animation {
+  position: fixed;
+  top: 25px;
+  left: 135px;
+  width: 100px;
+  height: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("../components/images/click1.png");
+  -webkit-animation: flash 4s infinite;
+          animation: flash 4s infinite;
+}
+
+@-webkit-keyframes flash {
+  0% {
+    background-image: url("../components/images/click1.png");
+  }
+  93% {
+    background-image: url("../components/images/click1.png");
+  }
+  94% {
+    background-image: url("../components/images/click2.png");
+  }
+  95% {
+    background-image: url("../components/images/click3.png");
+  }
+  96% {
+    background-image: url("../components/images/click4.png");
+  }
+  97% {
+    background-image: url("../components/images/click5.png");
+  }
+  98% {
+    background-image: url("../components/images/click6.png");
+  }
+  99% {
+    background-image: url("../components/images/click7.png");
+  }
+  100% {
+    background-image: url("../components/images/click8.png");
+  }
+}
+
+@keyframes flash {
+  0% {
+    background-image: url("../components/images/click1.png");
+  }
+  93% {
+    background-image: url("../components/images/click1.png");
+  }
+  94% {
+    background-image: url("../components/images/click2.png");
+  }
+  95% {
+    background-image: url("../components/images/click3.png");
+  }
+  96% {
+    background-image: url("../components/images/click4.png");
+  }
+  97% {
+    background-image: url("../components/images/click5.png");
+  }
+  98% {
+    background-image: url("../components/images/click6.png");
+  }
+  99% {
+    background-image: url("../components/images/click7.png");
+  }
+  100% {
+    background-image: url("../components/images/click8.png");
+  }
 }/*# sourceMappingURL=test.module.css.map */

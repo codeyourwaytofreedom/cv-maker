@@ -79,19 +79,21 @@ const New_skill = () => {
 
                 {/* New Software */}
                 <div className={x.cv_content_details_chapter_title}>
-                    <input type="text" placeholder="Javascript - React & Next.js"  onFocus={()=> setTools("title")}
-                        style={{fontSize: title_Styles[0], fontWeight: title_Styles[1], textDecoration: title_Styles[2], width:"400px"}}/>
+                    <div contentEditable={true} onFocus={()=> setTools("title")}
+                        style={{fontSize: title_Styles[0], fontWeight: title_Styles[1] === 600 ? "bolder" : "400", textDecoration: title_Styles[2], width:"400px"}} >
+                            Javascript - React & Next.js
+                    </div>
+{/*                     <input type="text" placeholder="Javascript - React & Next.js"  onFocus={()=> setTools("title")}
+                        style={{fontSize: title_Styles[0], fontWeight: title_Styles[1], textDecoration: title_Styles[2], width:"400px"}}/> */}
                 </div>
 
                 {/* Software Details */}
                 {
                     [...Array(lines+1)].map(e => 
                         <div className={x.cv_content_details_chapter_content}>   
-                            <div>
-                                <FontAwesomeIcon icon={faLink} color={"darkgreen"}/>
-                            </div>
+                        <span>&#10003;</span>
                             <div id={x.editable} contentEditable={true} spellCheck={false} onFocus={()=> setTools("content")} style={{ width:"500px",
-                                fontSize: stly[0], fontWeight:stly[1], textDecoration:stly[2]
+                                fontSize: stly[0], fontWeight:stly[1] === 600 ? "bolder" : "400", textDecoration:stly[2]
                                 }}>    
                                 Content
                             </div>

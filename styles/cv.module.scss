@@ -124,9 +124,10 @@
                 border-bottom: 1px solid silver;
                 padding-bottom: 10px;
                 margin-bottom: 20px;
+                width: 530px;
                 &_content{
                     text-align: justify;
-                    width: 550px !important;
+                    width: 530px !important;
                     height: fit-content;
                     display: flex;
                     column-gap: 10px;

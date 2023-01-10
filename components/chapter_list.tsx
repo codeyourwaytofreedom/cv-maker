@@ -2,6 +2,7 @@ import { faChevronCircleUp,faChevronCircleDown, faPlusCircle, faMinusCircle, faC
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRef, useState, useEffect } from "react";
 import x from "../styles/cv.module.css";
+import Adder from "./adder";
 import New_skill from "./new_skill";
 import Pen from "./pen";
 import Skill_title from "./skill_title";
@@ -31,20 +32,12 @@ const Chapter_list = () => {
     
         return (   
             <>
-           
-                <Skill_title title_holder={"Software Skills"}/>
                 {
                     [...Array(skills)].map(s=>
                             <New_skill/>
                         )
                 }
-               
-                <span style={{display:"flex", columnGap:"5px"}}> 
-                <span>Add new skill</span>
-                <FontAwesomeIcon icon={faPlusCircle} size={"xl"} onClick={()=> skills < 10 ? setSkills(skills+1) : setSkills(skills)}/>
-                <span> </span>
-                <FontAwesomeIcon icon={faMinusCircle} size={"xl"} onClick={()=>skills > 1 ? setSkills(skills-1) : setSkills(skills)}/>
-                </span> 
+                <Adder min={1} max={20} setter={setSkills} set={skills} text={"Add new skill"}/>
     </> )
 }
  

@@ -36,7 +36,7 @@ const Skill_title = ({title_holder}) => {
                         style={{fontSize: title_Styles[0], fontWeight: title_Styles[1], textDecoration: title_Styles[2], width:"400px"}}/> */}
                     
                     <div contentEditable={true} onFocus={()=> setTools("title")}
-                        style={{fontSize: title_Styles[0], fontWeight: title_Styles[1] === 600 ? "bolder" : "400", textDecoration: title_Styles[2], width:"400px"}}>
+                        style={{color:"navy", fontSize: title_Styles[0], fontWeight: title_Styles[1] === 600 ? "bolder" : "400", textDecoration: title_Styles[2], width:"400px"}}>
                         {title_holder} 
                     </div>
 

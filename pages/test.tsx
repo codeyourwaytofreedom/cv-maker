@@ -2,6 +2,7 @@ import x from "../styles/test.module.css";
 import { jsPDF } from "jspdf";
 import { useRef } from "react";
 
+//import pp from "../components/tiger.jpeg";
 import pp from "../components/me.jpg";
 import Image from 'next/image';
 import Summary_line from "../components/summary_line";
@@ -13,6 +14,7 @@ import Chapter_double from "../components/chapter_double";
 import Skill_title from "../components/skill_title";
 import Project from "../components/project";
 import Adder from "../components/adder";
+import Chapter_list from "../components/chapter_list";
 
 const Test = () => {
     const test = useRef();
@@ -36,6 +38,10 @@ const Test = () => {
         <>
         <div style={{display:"flex"}}>
         <div className={x.controls}>
+            <button onClick={trythis}>Download my CV</button>
+            <div className={x.controls_animation}>
+
+            </div>
         </div>
         <div className={x.cv} ref={test} >
             <div className={x.cv_summary}>
@@ -64,7 +70,7 @@ const Test = () => {
                 {
                     [...Array(project_number)].map( p => <Project/>)
                 }
-                <Adder min={1} max={20} setter={setProject_number} set={project_number}/>
+                <Adder min={1} max={20} setter={setProject_number} set={project_number} text={"Add new project"}/>
 
                 <Chapter_double 
                             title_holder={"Education"} 
@@ -76,13 +82,15 @@ const Test = () => {
                             content_holder_L={"Language"} 
                             content_holder_R={"Language Proficiency"} 
                             />
+                <Skill_title title_holder={"Software Skills"}/>
+                <Chapter_list/>
+
             </div>
 
 
         </div>
         
         </div>
-        <button onClick={trythis}>Click to test</button>
         </>
      );
 }
