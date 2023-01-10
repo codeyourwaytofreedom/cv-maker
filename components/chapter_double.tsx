@@ -34,7 +34,7 @@ const Chapter_double = ({guide, title_holder, content_holder_L, content_holder_R
                         style={{fontSize: title_Styles[0], fontWeight: title_Styles[1], textDecoration: title_Styles[2],
                         border:guide ? guide_border : "none"}}/> */}
                     <div contentEditable={true} onFocus={()=> setTools("title")}
-                        style={{fontSize: title_Styles[0], fontWeight: title_Styles[1] === 600 ? "bolder" : "400", textDecoration: title_Styles[2],
+                        style={{ color:"navy", fontSize: title_Styles[0], fontWeight: title_Styles[1] === 600 ? "bolder" : "400", textDecoration: title_Styles[2],
                         border:guide ? guide_border : "none"}}>
                         {title_holder}
                     </div>

@@ -5,10 +5,19 @@ import { faPlusCircle, faMinusCircle, faCheck, faLink } from "@fortawesome/free-
 const Adder = ({min, max, setter, set}) => {
     return ( 
         <span style={{display:"flex", columnGap:"5px"}}> 
-        <span>Add new project</span>
-        <FontAwesomeIcon icon={faPlusCircle} size={"xl"} onClick={()=> set < max ? setter(set+1) : setter(set)}/>
-        <span> </span>
-        <FontAwesomeIcon icon={faMinusCircle} size={"xl"} onClick={()=>set > min ? setter(set-1) : setter(set)}/>
+            <span style={{fontSize:"20px", fontWeight:"600", color:"crimson"}}>Add new project</span>
+            <span           style={{fontSize:"20px", border:"2px solid black", cursor:"pointer",
+                            borderRadius:"50%",  width:"30px", height:"30px", 
+                            fontWeight:"600",display:"grid", justifyContent:"center", 
+                            alignItems:"center"}} onClick={()=> set < max ? setter(set+1) : setter(set)}>
+                +
+            </span>
+            <span style={{fontSize:"20px", border:"2px solid black", cursor:"pointer",
+                            borderRadius:"50%",  width:"30px", height:"30px", 
+                            fontWeight:"600",display:"grid", justifyContent:"center", 
+                            alignItems:"center"}}onClick={()=>set > min ? setter(set-1) : setter(set)}>
+                -
+            </span>
         </span> 
      );
 }

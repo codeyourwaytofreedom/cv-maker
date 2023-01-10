@@ -32,8 +32,7 @@ const Chapter = ({guide, title_holder, content_holder}) => {
                         border:guide ? "1px solid silver" : "none"
                     }}/> */}
                     <div contentEditable={true}  onFocus={()=> setTools("title")} style={{
-                        fontSize: title_Styles[0], fontWeight:title_Styles[1] === 600 ? "bolder" : "400", textDecoration:title_Styles[2] === "underline" ? "underline" : "none", 
-                        border:guide ? "1px solid silver" : "none",
+                       color:"navy", fontSize: title_Styles[0], fontWeight:title_Styles[1] === 600 ? "bolder" : "400", textDecoration:title_Styles[2] === "underline" ? "underline" : "none", 
                     }}>
                             {title_holder}
                     </div>

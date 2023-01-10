@@ -12,6 +12,7 @@ import Chapter from "../components/chapter";
 import Chapter_double from "../components/chapter_double";
 import Skill_title from "../components/skill_title";
 import Project from "../components/project";
+import Adder from "../components/adder";
 
 const Test = () => {
     const test = useRef();
@@ -53,25 +54,28 @@ const Test = () => {
                     <Summary_line p_holder={"Email"}/>
                 </div>
             </div>
+
             <div className={x.cv_details}>
                 <Chapter  title_holder={"Personal Statement"} content_holder={"Personal statement goes here..."}/>  
                 <Chapter  title_holder={"LinkedIn"} content_holder={"LinkedIn Profile"}/> 
                 <Chapter  title_holder={"GitHub"} content_holder={"GitHub Profile"}/> 
 
                 <Skill_title title_holder={"Projects"}/>
-{/*                 {
+                {
                     [...Array(project_number)].map( p => <Project/>)
-                } */}
+                }
+                <Adder min={1} max={20} setter={setProject_number} set={project_number}/>
+
                 <Chapter_double 
                             title_holder={"Education"} 
                             content_holder_L={"Year-Year"} 
                             content_holder_R={"Faculty - Institute - etc..."} 
                             />
-                <Project/>
-                <Project/>
-                <Project/>
-                <Project/>
-
+                <Chapter_double 
+                            title_holder={"Language Skills"} 
+                            content_holder_L={"Language"} 
+                            content_holder_R={"Language Proficiency"} 
+                            />
             </div>
 
 
