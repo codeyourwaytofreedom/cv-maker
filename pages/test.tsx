@@ -1,6 +1,6 @@
 import x from "../styles/test.module.css";
 import { jsPDF } from "jspdf";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 //import pp from "../components/tiger.jpeg";
 import pp from "../components/me.jpg";
@@ -17,26 +17,47 @@ import Adder from "../components/adder";
 import Chapter_list from "../components/chapter_list";
 
 const Test = () => {
-    const test = useRef();
+    const cv = useRef();
+    const anchor = useRef();
+    const [total_height, setTotalHeight] = useState(1131);
+    const [mult, setMult] = useState(null)
+
+    useEffect(()=>{
+        setTotalHeight(anchor.current.offsetTop);
+        const update = ()=> {
+            if(anchor.current)
+            {setTotalHeight(anchor.current.offsetTop);}
+        }
+        window.addEventListener("click", update)
+        window.addEventListener("keydown", update)
+    });
+
     const trythis = () => {
         setHide(true)
+        setMult((parseInt(total_height/1131)+1)*1131)
             setTimeout(() => {
                 var doc = new jsPDF();
-                doc.html(test.current, {
+                doc.html(cv.current, {
                 callback: function (doc) {
                     doc.save();
                 },
                 x: 0,
                 y: 0,
+                marginTop:3,
                 width:919,
                 windowWidth:3500,
                 autoPaging:"text",
                 });
             }, 700);
+        setTimeout(() => {
+            setMult(null)
+        }, 1000);
         };
     const [project_number, setProject_number] = useState(1)
     const [hide, setHide] = useState(false);
-    const colors = ["orange", "pink", "yellow", "lightgreen", "lightblue", "crimson","salmon", "aqua", "wheat", "pink"]
+    const colors = ["#E6B0AA ", "#F5B7B1 ", " #D7BDE2", "#D2B4DE ", "#A9CCE3 ", " #AED6F1"," #A3E4D7", "#A2D9CE ", "#A9DFBF ", " #ABEBC6",
+                    "#F9E79F ", "#FAD7A0 ", "#F5CBA7 ", "#EDBB99 ", "#F7F9F9 ", " #E5E7E9","#D5DBDB ", "#D5DBDB ", "#AEB6BF ", "#ABB2B9 "
+                    ]
     const [color, setColor] = useState("white")
     return ( 
         <>
@@ -44,7 +65,7 @@ const Test = () => {
         <div className={x.controls}>
             <div className={x.controls_animation}>
             </div>
-            <button id={x.download} onClick={trythis}>Download my CV</button>
+            <button id={x.download} onClick={trythis}>Download my CV {total_height}</button>
             <div id={x.colors}>
                 {
                     colors.map(c =>
@@ -53,8 +74,8 @@ const Test = () => {
                 }
             </div>
         </div>
-        <div className={x.cv} ref={test} >
-            <div className={x.cv_summary} style={{backgroundColor:color}}>
+        <div className={x.cv} ref={cv} >
+            <div className={x.cv_summary} style={{backgroundColor:color, height:mult ? mult : "auto"}}>
                 <div className={x.cv_summary_picture}>
                 <Image
                     src={pp}
@@ -99,8 +120,10 @@ const Test = () => {
 
 
         </div>
+       
         
         </div>
+        <div ref={anchor}>anchor</div>
         </>
      );
 }
