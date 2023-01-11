@@ -3,7 +3,7 @@ import { jsPDF } from "jspdf";
 import { useEffect, useRef } from "react";
 
 //import pp from "../components/tiger.jpeg";
-import pp from "../components/mee.jpg";
+import pp from "../components/mm.jpg";
 import Image from 'next/image';
 import Summary_line from "../components/summary_line";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -20,10 +20,12 @@ const Test = () => {
     const cv = useRef();
     const anchor = useRef();
     const [total_height, setTotalHeight] = useState(1131);
-    const [mult, setMult] = useState(null)
+    const [mult, setMult] = useState(null);
+    const [sizes, setSizes] = useState(1)
 
     useEffect(()=>{
         setTotalHeight(anchor.current.offsetTop);
+        setSizes(parseInt(total_height/1131)+1)
         const update = ()=> {
             if(anchor.current)
             {setTotalHeight(anchor.current.offsetTop);}
@@ -51,6 +53,7 @@ const Test = () => {
             }, 700);
         setTimeout(() => {
             setMult(null)
+            setHide(false)
         }, 1000);
         };
     const [project_number, setProject_number] = useState(1)
@@ -80,7 +83,7 @@ const Test = () => {
                 <Image
                     src={pp}
                     alt="Profile Picture"
-                    sizes={"230px"}
+                    sizes="230px"
                 />
                 </div>
                 <div className={x.cv_summary_text}>
@@ -94,6 +97,16 @@ const Test = () => {
             </div>
 
             <div className={x.cv_details}>
+                {
+                    [...Array(sizes)].map((e,i)=>
+                        <div style={{position:"absolute", top:1121*(i+1),width:"120px", left:"-130px", border:"2px solid red"}}>
+                            <h3 style={{position:"absolute", top:"-30px"}}>Page Break {i+1}</h3>
+                        </div>
+                    )
+                }
+
+
+
                 <Chapter  title_holder={"Personal Statement"} content_holder={"Personal statement goes here..."}/>  
                 <Chapter  title_holder={"LinkedIn"} content_holder={"LinkedIn Profile"}/> 
                 <Chapter  title_holder={"GitHub"} content_holder={"GitHub Profile"}/> 
