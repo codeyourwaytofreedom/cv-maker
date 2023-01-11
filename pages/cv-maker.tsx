@@ -3,7 +3,7 @@ import { jsPDF } from "jspdf";
 import { useEffect, useRef } from "react";
 
 //import pp from "../components/tiger.jpeg";
-import pp from "../components/me.jpg";
+import pp from "../components/mee.jpg";
 import Image from 'next/image';
 import Summary_line from "../components/summary_line";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -65,7 +65,7 @@ const Test = () => {
         <div className={x.controls}>
             <div className={x.controls_animation}>
             </div>
-            <button id={x.download} onClick={trythis}>Download my CV {total_height}</button>
+            <button id={x.download} onClick={trythis}>Download my CV</button>
             <div id={x.colors}>
                 {
                     colors.map(c =>
@@ -80,6 +80,7 @@ const Test = () => {
                 <Image
                     src={pp}
                     alt="Profile Picture"
+                    sizes={"230px"}
                 />
                 </div>
                 <div className={x.cv_summary_text}>
@@ -123,7 +124,7 @@ const Test = () => {
        
         
         </div>
-        <div ref={anchor}>anchor</div>
+        <div ref={anchor}></div>
         </>
      );
 }
