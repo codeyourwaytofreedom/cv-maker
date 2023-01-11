@@ -120,7 +120,6 @@
   padding: 30px;
   display: flex;
   flex-direction: column;
-  row-gap: 10px;
 }
 .cv_content_details_tools {
   position: absolute;
@@ -162,10 +161,10 @@
 .cv_content_details_chapter {
   position: relative;
   display: grid;
-  row-gap: 10px;
+  row-gap: 5px;
   border-bottom: 1px solid silver;
   padding-bottom: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   width: 530px;
   padding-left: 10px;
 }

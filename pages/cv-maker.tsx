@@ -98,11 +98,13 @@ const Test = () => {
 
             <div className={x.cv_details}>
                 {
+                    !hide ?
                     [...Array(sizes)].map((e,i)=>
-                        <div style={{position:"absolute", top:1121*(i+1),width:"120px", left:"-130px", border:"2px solid red"}}>
-                            <h3 style={{position:"absolute", top:"-30px"}}>Page Break {i+1}</h3>
+                        <div style={{position:"absolute", top:1121*(i+1),width:"120px", left:"60px", border:"2px solid red"}}>
+                            <h3 style={{position:"absolute", top:"-30px"}}>Page {i+1}</h3>
                         </div>
                     )
+                    : null
                 }
 
 

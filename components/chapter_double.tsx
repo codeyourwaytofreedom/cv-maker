@@ -84,14 +84,12 @@ const Chapter_double = ({guide, title_holder, content_holder_L, content_holder_R
 
                                     <div id={x.education_extra}>
                                         <h3>Additional notes </h3>
-                                        <span style={{border:"1px solid black", borderRadius:"50%", padding:"2px",
+                                        <span style={{border:"1px solid black", borderRadius:"50%", padding:"1px",width:"30px", height:"30px",
                                                     transform:"rotate(-10deg)", backgroundColor:color, cursor:"pointer"}}>
                                             <FontAwesomeIcon icon={faCheck} size={"xl"} color={"white"}
                                         onClick={()=> color === "green" ? setColor("black") : setColor("green")} />
                                         </span>
                                     </div>
-
-
                                     </>
                                     :
                                     null
