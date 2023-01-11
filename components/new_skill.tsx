@@ -3,7 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRef, useState, useEffect } from "react";
 import x from "../styles/cv.module.css";
 import Pen from "./pen";
-
+import pp from "../components/images/check-mark.png";
+import Image from 'next/image';
 
 const New_skill = () => {
         const [title_Styles, setTitle_Styes] = useState(["16px", 300, "none"]);
@@ -91,7 +92,9 @@ const New_skill = () => {
                 {
                     [...Array(lines+1)].map(e => 
                         <div className={x.cv_content_details_chapter_content}>   
-                        <span>&#10003;</span>
+                        <span id={x.icon}>
+                            &#8226;
+                        </span>
                             <div id={x.editable} contentEditable={true} spellCheck={false} onFocus={()=> setTools("content")} style={{ width:"500px",
                                 fontSize: stly[0], fontWeight:stly[1] === 600 ? "bolder" : "400", textDecoration:stly[2]
                                 }}>    

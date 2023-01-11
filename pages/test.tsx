@@ -32,23 +32,29 @@ const Test = () => {
                 windowWidth:3500,
                 autoPaging:"text",
                 });
-            }, 2000);
+            }, 700);
         };
-
     const [project_number, setProject_number] = useState(1)
-    const [hide, setHide] = useState(false)
-
+    const [hide, setHide] = useState(false);
+    const colors = ["orange", "pink", "yellow", "lightgreen", "lightblue", "crimson","salmon", "aqua", "wheat", "pink"]
+    const [color, setColor] = useState("white")
     return ( 
         <>
         <div style={{display:"flex"}}>
         <div className={x.controls}>
-            <button onClick={trythis}>Download my CV</button>
             <div className={x.controls_animation}>
-
+            </div>
+            <button id={x.download} onClick={trythis}>Download my CV</button>
+            <div id={x.colors}>
+                {
+                    colors.map(c =>
+                        <button style={{backgroundColor:c}} value={c} onClick={()=> setColor(c)}></button>
+                    )
+                }
             </div>
         </div>
         <div className={x.cv} ref={test} >
-            <div className={x.cv_summary}>
+            <div className={x.cv_summary} style={{backgroundColor:color}}>
                 <div className={x.cv_summary_picture}>
                 <Image
                     src={pp}

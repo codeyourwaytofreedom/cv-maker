@@ -10,6 +10,7 @@
   justify-content: center;
   padding-top: 20px;
   align-content: flex-start;
+  height: 1131px;
 }
 .cv_summary_picture {
   border: 2px solid white;
@@ -37,7 +38,25 @@
 .controls {
   width: 350px;
 }
-.controls button {
+.controls #colors {
+  position: fixed;
+  top: 175px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  left: 96px;
+  gap: 3px;
+}
+.controls #colors button {
+  background: transparent;
+  border: none;
+  width: 40px;
+  height: 40px;
+  background-image: url("../components/images/paint.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+.controls #download {
   position: fixed;
   top: 110px;
   left: 100px;
@@ -48,6 +67,8 @@
   border: 2px solid black;
   padding: 10px;
   border-radius: 5px;
+  background-color: black;
+  color: white;
 }
 .controls_animation {
   position: fixed;
@@ -58,8 +79,6 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url("../components/images/click1.png");
-  -webkit-animation: flash 4s infinite;
-          animation: flash 4s infinite;
 }
 
 @-webkit-keyframes flash {

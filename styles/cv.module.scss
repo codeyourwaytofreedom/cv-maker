@@ -42,7 +42,7 @@
     &_content{
         @include flex-center;
         //border: 2px solid red;
-        height: 2900px;
+        //height: 2900px;
         width: 800px;
         position: relative;
         left: 330px;
@@ -125,6 +125,7 @@
                 padding-bottom: 10px;
                 margin-bottom: 20px;
                 width: 530px;
+                padding-left: 10px;
                 &_content{
                     text-align: justify;
                     width: 530px !important;
@@ -132,6 +133,9 @@
                     display: flex;
                     column-gap: 10px;
                     position: relative;
+                    #icon{
+                        font-size: 30px;
+                    }
                     &_controls{
                         position: absolute;
                         right: -310px;
