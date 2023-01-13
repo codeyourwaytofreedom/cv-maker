@@ -13,17 +13,17 @@
         height: 1131px;
         &_picture{
             border:1px solid white;
-            width: 230px;
-            aspect-ratio: 1/1;
-            overflow: hidden;
+            width: 230px !important;
+            height: 230px !important;
             border-radius: 10px;
-            object-fit: contain;
+            position: relative;
             img{
                 //border:2px solid white;
-                position: relative;
+                position: relative !important;
                 width: 230px !important;
                 height: 230px !important;
                 border-radius: 10px;
+                object-fit: contain !important;
             }
         }
         &_text{

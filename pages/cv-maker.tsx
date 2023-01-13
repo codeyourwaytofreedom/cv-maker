@@ -1,9 +1,11 @@
 import x from "../styles/test.module.css";
 import { jsPDF } from "jspdf";
 import { useEffect, useRef } from "react";
+import html2canvas from "html2canvas";
 
 //import pp from "../components/tiger.jpeg";
 import pp from "../components/mm.jpg";
+import tt from "../components/pp.png";
 import Image from 'next/image';
 import Summary_line from "../components/summary_line";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,6 +17,7 @@ import Skill_title from "../components/skill_title";
 import Project from "../components/project";
 import Adder from "../components/adder";
 import Chapter_list from "../components/chapter_list";
+import { url } from "inspector";
 
 const Test = () => {
     const cv = useRef();
@@ -37,25 +40,25 @@ const Test = () => {
     const trythis = () => {
         setHide(true)
         setMult((parseInt(total_height/1131)+1)*1131)
-            setTimeout(() => {
-                var doc = new jsPDF();
-                doc.html(cv.current, {
-                callback: function (doc) {
-                    doc.save();
-                },
-                x: 0,
-                y: 0,
-                marginTop:3,
-                width:919,
-                windowWidth:3500,
-                autoPaging:"text",
-                });
-            }, 700);
+        var doc = new jsPDF();
+        setTimeout(() => {
+            doc.html(cv.current, {
+            callback: function (doc) {
+                doc.save("Cv.pdf");
+            },
+            x: 0,
+            y: 0,
+            marginTop:3,
+            width:919,
+            windowWidth:3500,
+            autoPaging:"text",
+            });
+        }, 700);
         setTimeout(() => {
             setMult(null)
             setHide(false)
         }, 1000);
-        };
+    };
     const [project_number, setProject_number] = useState(1)
     const [hide, setHide] = useState(false);
     const colors = ["#E6B0AA ", "#F5B7B1 ", " #D7BDE2", "#D2B4DE ", "#A9CCE3 ", " #AED6F1"," #A3E4D7", "#A2D9CE ", "#A9DFBF ", " #ABEBC6",
@@ -82,10 +85,15 @@ const Test = () => {
                 <div className={x.cv_summary_picture}>
                 <Image
                     src={pp}
+                    //src="/tiger.jpeg"
                     alt="Profile Picture"
+/*                    width={100}
+                    height={100} */
                     sizes="230px"
+                    t="1234567890"
                 />
                 </div>
+                
                 <div className={x.cv_summary_text}>
                     <Summary_line p_holder={"Full name"}/>
                     <Summary_line p_holder={"Profession"}/>                        
@@ -100,7 +108,7 @@ const Test = () => {
                 {
                     !hide ?
                     [...Array(sizes)].map((e,i)=>
-                        <div style={{position:"absolute", top:1121*(i+1),width:"120px", left:"60px", border:"2px solid red"}}>
+                        <div style={{position:"absolute", top:1121*(i+1),width:"120px", left:"60px", border:"2px solid black"}}>
                             <h3 style={{position:"absolute", top:"-30px"}}>Page {i+1}</h3>
                         </div>
                     )

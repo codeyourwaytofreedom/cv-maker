@@ -123,7 +123,7 @@ const Chapter_double = ({guide, title_holder, content_holder_L, content_holder_R
                     <div id={x.editable} contentEditable={true} spellCheck={false} onFocus={()=> setTools("content")}
                                 style={{
                                 fontSize: stly[0], fontWeight: stly[1], fontFamily:"Oswald",
-                                border:guide ? guide_border : "none",
+                                border:guide ? guide_border : "none", textAlign:"justify",
                                 width:"500px" }}
                         >        
                                 Additional notes

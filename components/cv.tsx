@@ -30,7 +30,7 @@ const CV = () => {
         const pdfWidth = pdf.internal.pageSize.getWidth();
         const pdfHeight =
           (imgProperties.height * pdfWidth) / imgProperties.width;
-        pdf.addImage(data, 'JPEG', 0, 0, pdfWidth, pdfHeight);
+        pdf.addImage(data, 'JPEG', 0, 0, 90, 90);
         pdf.save('print.pdf');
       };
     

@@ -14,18 +14,18 @@
 }
 .cv_summary_picture {
   border: 1px solid white;
-  width: 230px;
-  aspect-ratio: 1/1;
-  overflow: hidden;
-  border-radius: 10px;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-.cv_summary_picture img {
-  position: relative;
   width: 230px !important;
   height: 230px !important;
   border-radius: 10px;
+  position: relative;
+}
+.cv_summary_picture img {
+  position: relative !important;
+  width: 230px !important;
+  height: 230px !important;
+  border-radius: 10px;
+  -o-object-fit: contain !important;
+     object-fit: contain !important;
 }
 .cv_summary_text {
   display: grid;
